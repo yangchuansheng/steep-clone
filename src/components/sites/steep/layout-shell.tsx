@@ -129,6 +129,27 @@ function YouTubeIcon(props: IconProps) {
   );
 }
 
+function SealosMarkPaths() {
+  return (
+    <>
+      <path
+        d="M40.0005 17.0891C39.9026 16.7771 39.7825 16.4725 39.641 16.1778V16.1588C38.9807 14.8106 37.8859 13.7258 36.5342 13.0804C35.1825 12.4351 33.6531 12.2669 32.1943 12.6032C30.7354 12.9396 29.4325 13.7607 28.497 14.9334C27.5614 16.1061 27.0481 17.5616 27.0403 19.0638C27.0404 19.5363 27.0912 20.0073 27.1917 20.4689C27.1921 20.4752 27.1921 20.4816 27.1917 20.4879C27.2295 20.6778 27.2863 20.8676 27.343 21.0575C27.6807 22.3951 27.7464 23.7872 27.5362 25.1508C27.3261 26.5144 26.8443 27.8215 26.1196 28.9942C25.395 30.1668 24.4424 31.1809 23.3187 31.976C22.195 32.771 20.9231 33.3307 19.5791 33.6217C18.2351 33.9126 16.8465 33.9288 15.4961 33.6693C14.1457 33.4099 12.8612 32.88 11.7194 32.1114C10.5775 31.3428 9.60164 30.3513 8.85001 29.1959C8.09839 28.0405 7.58642 26.745 7.34466 25.3866C7.68654 27.7412 8.51731 29.9974 9.78318 32.0093C11.0491 34.0212 12.7218 35.7439 14.6932 37.0659C16.6646 38.3879 18.8906 39.2796 21.2272 39.6835C23.5637 40.0873 25.9588 39.9942 28.2572 39.4102C30.5556 38.8262 32.7063 37.7643 34.5698 36.2932C36.4334 34.8222 37.9684 32.9748 39.0754 30.8707C40.1824 28.7665 40.8367 26.4525 40.9961 24.0785C41.1555 21.7044 40.8163 19.3233 40.0005 17.0891Z"
+        fill="currentColor"
+      />
+      <path
+        d="M13.1155 22.8042C15.3102 26.0131 19.851 25.7283 19.851 25.7283C18.7158 24.627 17.9779 23.6207 17.9022 20.7536C17.8266 17.8865 16.1994 17.127 16.1994 17.127C19.1131 15.2852 18.0725 13.2915 17.9779 11.07C17.9212 9.68394 18.7347 8.65862 19.378 8.07001C15.6755 8.6266 12.3299 10.5959 10.0388 13.5673C7.74765 16.5387 6.68774 20.283 7.08003 24.0194C7.34491 23.2789 11.0911 19.8422 13.1155 22.8042Z"
+        fill="currentColor"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M37.1815 21.6651C37.1815 29.9389 30.4981 36.6461 22.2537 36.6461C17.8774 36.6461 13.9409 34.7562 11.2105 31.7453C11.3763 31.8723 11.5462 31.9944 11.7199 32.1114C12.8618 32.88 14.1463 33.4098 15.4966 33.6693C16.847 33.9288 18.2357 33.9125 19.5797 33.6216C20.9237 33.3306 22.1955 32.7709 23.3192 31.9759C24.443 31.1808 25.3956 30.1667 26.1202 28.9941C26.8448 27.8215 27.3266 26.5143 27.5368 25.1507C27.747 23.7871 27.6813 22.395 27.3436 21.0575C27.2868 20.8676 27.2301 20.6777 27.1922 20.4878C27.1927 20.4815 27.1927 20.4752 27.1922 20.4688C27.0917 20.0073 27.041 19.5362 27.0409 19.0638C27.0487 17.5616 27.562 16.1061 28.4975 14.9334C29.433 13.7606 30.7359 12.9395 32.1948 12.6032C32.7965 12.4645 33.4102 12.4116 34.0184 12.4426C36.0003 14.9852 37.1815 18.1867 37.1815 21.6651Z"
+        fill="currentColor"
+      />
+    </>
+  );
+}
+
 function SteepWordmarkSvg(props: IconProps) {
   return (
     <svg
@@ -139,10 +160,17 @@ function SteepWordmarkSvg(props: IconProps) {
       fill="none"
       {...props}
     >
-      <path
-        d="M162.541 40.5463C162.556 40.4673 162.489 40.3872 162.409 40.3792H157.124C156.308 43.2579 153.87 44.73 150.241 44.73C145.881 44.73 142.646 41.4772 142.166 36.6273H162.275C162.345 35.9958 162.398 35.1466 162.398 34.4452C162.398 27.3566 157.777 21.6457 149.717 21.6457C141.657 21.6457 136.828 27.5872 136.828 35.3969C136.828 43.2066 142.118 49.4668 150.239 49.4668C156.628 49.4668 161.459 45.9652 162.541 40.5463H162.541ZM156.906 32.5252H142.341C143.151 28.3281 145.701 26.1129 149.719 26.1129C153.737 26.1129 156.523 28.5672 156.906 32.5252ZM134.189 40.3814H128.904C128.088 43.2045 125.65 44.73 122.022 44.73C117.661 44.73 114.426 41.4772 113.946 36.6273H134.055C134.125 35.9937 134.178 35.145 134.178 34.4452C134.178 27.3684 129.547 21.6457 121.499 21.6457C113.451 21.6457 108.611 27.6096 108.611 35.3969C108.611 43.1842 113.9 49.4668 122.022 49.4668C128.41 49.4668 133.241 45.9652 134.323 40.5463C134.34 40.4561 134.281 40.3835 134.189 40.3814ZM128.686 32.5252H114.121C114.932 28.3281 117.481 26.1129 121.499 26.1129C125.517 26.1129 128.304 28.5672 128.686 32.5252ZM87.949 38.5654C87.949 30.5833 81.3387 28.9259 75.5035 27.4645C70.8692 26.3024 66.8664 25.2978 66.8664 21.4488C66.8664 18.3961 69.5321 16.4996 73.8226 16.4996C78.1131 16.4996 80.9539 18.6496 81.4844 22.3194H87.1798C86.5842 15.5847 81.2923 11.2883 73.8247 11.2883C66.3572 11.2883 61.0231 15.4662 61.0231 21.4488C61.0231 29.1261 67.5523 30.8886 73.3134 32.4446C77.9732 33.7017 81.9974 34.79 81.9974 38.6178C81.9974 42.1989 79.1353 44.2544 74.1413 44.2544C69.1472 44.2544 65.9189 41.3907 65.5314 36.4357H59.8515C60.2539 44.6986 66.0524 49.4641 74.1434 49.4641C82.2344 49.4641 87.949 45.1854 87.949 38.5654ZM179.207 21.6399C175.78 21.642 172.613 23.1574 170.877 25.6133V22.0632H165.403V59.8157H170.877V45.6951C172.55 48.0245 175.615 49.4609 178.943 49.4609C187.048 49.4609 192 43.6422 192 35.5288C192 27.4153 186.984 21.6399 179.207 21.6399ZM178.467 26.4818C183.26 26.4818 186.449 30.1376 186.449 35.5288C186.449 40.9199 183.26 44.6228 178.467 44.6228C173.674 44.6228 170.454 41.063 170.454 35.5523C170.454 30.0415 173.599 26.4818 178.467 26.4818ZM99.8779 22.1651V13.7181H94.404V22.1646H88.9632V26.9526H94.404V40.1502C94.404 45.6353 97.8511 49.0419 103.4 49.0419H107.749V44.2544H103.824C101.315 44.2544 99.8779 42.6996 99.8779 39.9912V26.9531H107.749V22.1651H99.8779ZM21.3511 9C9.55463 9 0 18.5546 0 30.3511C0 35.849 2.1554 40.9578 5.81551 45.0001C6.57455 45.8414 7.8001 45.8729 8.6013 45.0717L19.2955 34.3774C19.9206 33.7524 20.985 34.1917 20.985 35.0756L20.9769 49.7807C20.9769 50.8594 21.713 51.5955 22.7918 51.5955C31.0654 51.5955 42.7017 43.8557 42.7017 30.3511C42.7023 18.5546 33.1476 9 21.3511 9ZM4.69725 30.3511C4.69725 21.1701 12.1701 13.6972 21.3511 13.6972C30.5321 13.6972 38.005 21.1701 38.005 30.3511C38.005 33.5538 37.0608 36.7378 35.3206 39.4259C35.2795 39.4878 35.192 39.4958 35.1381 39.4451L22.685 26.9878C21.9372 26.24 20.7629 26.24 20.0161 26.9878L7.56204 39.4398C7.50972 39.4921 7.42058 39.4819 7.37948 39.4206C5.63937 36.7319 4.69618 33.5538 4.69618 30.3511H4.69725Z"
+      <g transform="translate(-4, 3) scale(1.15)">
+        <SealosMarkPaths />
+      </g>
+      <text
+        x="52"
+        y="44"
         fill="currentColor"
-      />
+        className="text-[38px] font-medium tracking-[-0.03em]"
+      >
+        Sealos
+      </text>
     </svg>
   );
 }
@@ -151,13 +179,14 @@ function SteepMarkSvg(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="64"
-      height="64"
-      viewBox="0 0 64 64"
-      fill="currentColor"
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      aria-hidden="true"
       {...props}
     >
-      <path d="M32.0004 0C14.3202 0 0 14.32 0 32C0 40.24 3.23044 47.8968 8.71611 53.9552C9.85372 55.216 11.6905 55.2632 12.8914 54.0624L28.9196 38.0344C29.8564 37.0976 31.4516 37.756 31.4516 39.0808L31.4396 61.12C31.4396 62.7368 32.5428 63.84 34.1596 63.84C46.5598 63.84 64 52.24 64 32C64.0008 14.32 49.6806 0 32.0004 0ZM7.04009 32C7.04009 18.24 18.2402 7.04 32.0004 7.04C45.7606 7.04 56.9607 18.24 56.9607 32C56.9607 36.8 55.5455 41.572 52.9375 45.6008C52.8759 45.6936 52.7447 45.7056 52.6639 45.6296L33.9996 26.9592C32.8788 25.8384 31.1188 25.8384 29.9996 26.9592L11.3337 45.6216C11.2553 45.7 11.1217 45.6848 11.0601 45.5928C8.45211 41.5632 7.03849 36.8 7.03849 32H7.04009Z" />
+      <SealosMarkPaths />
     </svg>
   );
 }
@@ -241,7 +270,7 @@ export function SteepFooter({
       <Section className="py-10 xs:py-12 md:py-10 lg:py-20 xl:py-24">
         <div className=" md:max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-6">
           <div className="mb-4 md:mb-6 hidden md:block">
-            <Link href="/" aria-label="Steep home">
+            <Link href="/" aria-label="Sealos home">
               <SteepMarkSvg
                 className={`cursor-pointer w-8 h-8 ${
                   mode === "dark" ? "text-white" : "text-primary-text"
@@ -250,123 +279,87 @@ export function SteepFooter({
             </Link>
           </div>
           <div>
-            <FooterColumnHeading mode={mode}>Explore</FooterColumnHeading>
+            <FooterColumnHeading mode={mode}>Product</FooterColumnHeading>
             <FooterLink mode={mode} href="/">
               Overview
             </FooterLink>
-            <FooterLink mode={mode} href="/product">
-              Explore &amp; analyze
+            <FooterLink mode={mode} href="/#capabilities">
+              Capabilities
             </FooterLink>
-            <FooterLink mode={mode} href="/semantic-platform">
-              Semantic platform
+            <FooterLink mode={mode} href="/#equation">
+              Why Sealos
             </FooterLink>
-            <FooterLink mode={mode} href="/pricing">
-              Pricing
+            <FooterLink mode={mode} href="/#canvas">
+              Stack Canvas
             </FooterLink>
-            <FooterLink mode={mode} href="/download">
+            <FooterLink mode={mode} href="/#ops">
+              Ops &amp; Primitives
+            </FooterLink>
+            <FooterLink
+              mode={mode}
+              href="https://sealos.run/downloads"
+              opensInNewWindow
+            >
               Download
-            </FooterLink>
-            <FooterLink
-              mode={mode}
-              href="https://help.steep.app/get-started/connect-data-source"
-              opensInNewWindow
-            >
-              Databases
-            </FooterLink>
-            <FooterLink
-              mode={mode}
-              href="https://help.steep.app/using-steep/slack-subscriptions"
-              opensInNewWindow
-            >
-              Integrations
-            </FooterLink>
-            <FooterLink
-              mode={mode}
-              href="https://help.steep.app/introduction/try-with-demo-data"
-              opensInNewWindow
-            >
-              Demo mode
             </FooterLink>
           </div>
           <div>
             <FooterColumnHeading mode={mode}>Resources</FooterColumnHeading>
             <FooterLink
               mode={mode}
-              href="https://help.steep.app"
+              href="https://sealos.io/docs"
               opensInNewWindow
             >
-              Help center
+              Documentation
             </FooterLink>
             <FooterLink
               mode={mode}
-              href="https://help.steep.app/api"
+              href="https://github.com/labring/sealos"
               opensInNewWindow
             >
-              API reference
+              GitHub
             </FooterLink>
-            <FooterLink mode={mode} href="/blog">
-              Blog
-            </FooterLink>
-            <FooterLink mode={mode} href="/changelog">
-              Product updates
+            <FooterLink mode={mode} href="/#faq">
+              FAQ
             </FooterLink>
             <FooterLink mode={mode} href="/security">
               Security
-            </FooterLink>
-            <FooterLink mode={mode} href="/dpa">
-              DPA
             </FooterLink>
             <FooterLink mode={mode} href="/terms">
               Terms of service
             </FooterLink>
           </div>
           <div>
-            <FooterColumnHeading mode={mode}>Company</FooterColumnHeading>
-            <FooterLink mode={mode} href="/about">
-              About
+            <FooterColumnHeading mode={mode}>Capabilities</FooterColumnHeading>
+            <FooterLink mode={mode} href="/#equation">
+              Cloud App Platform
             </FooterLink>
-            <FooterLink mode={mode} href="/customers">
-              Customer stories
+            <FooterLink mode={mode} href="/#equation">
+              Managed Databases
             </FooterLink>
-            <FooterLink
-              mode={mode}
-              href="https://careers.steep.app/"
-              opensInNewWindow
-            >
-              Careers
+            <FooterLink mode={mode} href="/#equation">
+              Storage &amp; AI Gateway
             </FooterLink>
           </div>
           <div>
             <FooterColumnHeading mode={mode}>Contact</FooterColumnHeading>
-            <FooterLink mode={mode} href="mailto:hello@steep.app">
-              hello@steep.app
-            </FooterLink>
-            <FooterLink mode={mode} href="/support">
-              Support
-            </FooterLink>
-            <FooterLink mode={mode} href="/contact">
-              Contact sales
-            </FooterLink>
-            <FooterLink mode={mode} href="/demo">
-              Book a demo
-            </FooterLink>
             <FooterLink
               mode={mode}
-              href="https://linkedin.com/company/steep-app"
+              href="https://sealos.run/downloads"
               opensInNewWindow
             >
-              LinkedIn
+              Download Sealos
             </FooterLink>
             <FooterLink
               mode={mode}
-              href="https://www.youtube.com/@SteepAnalytics"
+              href="https://discord.gg/sealos"
               opensInNewWindow
             >
-              YouTube
+              Discord
             </FooterLink>
             <FooterLink
               mode={mode}
-              href="https://x.com/steepapp"
+              href="https://x.com/sealos_io"
               opensInNewWindow
             >
               X (Twitter)
@@ -382,7 +375,7 @@ export function SteepFooter({
           </div>
           <div className="flex gap-4 items-center">
             <Link
-              href="https://linkedin.com/company/steep-app"
+              href="https://linkedin.com/company/sealos"
               target="_new"
               rel="noreferrer"
               aria-label="LinkedIn"
@@ -391,7 +384,7 @@ export function SteepFooter({
               <LinkedInIcon />
             </Link>
             <Link
-              href="https://www.youtube.com/@SteepAnalytics"
+              href="https://www.youtube.com/@sealos"
               target="_new"
               rel="noreferrer"
               aria-label="YouTube"
@@ -400,7 +393,7 @@ export function SteepFooter({
               <YouTubeIcon />
             </Link>
             <Link
-              href="https://x.com/steepapp"
+              href="https://x.com/sealos_io"
               target="_new"
               rel="noreferrer"
               aria-label="X (Twitter)"
@@ -414,14 +407,14 @@ export function SteepFooter({
               mode === "dark" ? "text-[#9E9E9E]" : "text-primary-gray"
             }`}
           >
-            &copy; Steep Analytics
+            &copy; 2026 Sealos
           </div>
           <div
             className={`text-[15px] ${
               mode === "dark" ? "text-[#9E9E9E]" : "text-primary-gray"
             }`}
           >
-            Stockholm, Sweden
+            Cloud Operating System
           </div>
           <div className="text-[15px] text-primary-gray">
             <FooterLink mode={mode} href="" onClick={cookieConsent.reset}>
@@ -538,56 +531,49 @@ function MobileMenuDrawer({ isOpen, isDark }: MobileMenuDrawerProps) {
         )}
       >
         <div className="flex flex-col">
-          <MobilePrimaryLink href="/product" text="Explore & analyze" />
-          <MobilePrimaryLink
-            href="/semantic-platform"
-            text="Semantic platform"
-          />
-          <MobilePrimaryLink href="/ai" text="Steep AI" />
-          <MobilePrimaryLink href="/customers" text="Customers" />
-          <MobilePrimaryLink href="/pricing" text="Pricing" />
+          <MobilePrimaryLink href="#capabilities" text="Capabilities" />
+          <MobilePrimaryLink href="#equation" text="Why Sealos" />
+          <MobilePrimaryLink href="#canvas" text="Stack Canvas" />
+          <MobilePrimaryLink href="#ops" text="Ops & Primitives" />
+          <MobilePrimaryLink href="#faq" text="FAQ" />
         </div>
         <div className="columns-2 px-9">
-          <MobileSecondaryLink href="/blog" text="Blog" />
-          <MobileSecondaryLink href="/changelog" text="Product updates" />
-          <MobileSecondaryLink href="/download" text="Download" />
-          <MobileSecondaryLink href="/support" text="Contact support" />
           <MobileSecondaryLink
-            href="https://help.steep.app/"
-            text="Help center"
+            href="https://sealos.run/downloads"
+            text="Download"
             opensInNewWindow
           />
           <MobileSecondaryLink
-            href="https://help.steep.app/api"
-            text="API reference"
+            href="https://sealos.io/docs"
+            text="Documentation"
             opensInNewWindow
           />
           <MobileSecondaryLink
-            href="https://careers.steep.app/"
-            text="Careers"
+            href="https://github.com/labring/sealos"
+            text="GitHub"
             opensInNewWindow
           />
-          <MobileSecondaryLink href="/about" text="About" />
+          <MobileSecondaryLink
+            href="https://discord.gg/sealos"
+            text="Discord"
+            opensInNewWindow
+          />
+          <MobileSecondaryLink href="/security" text="Security" />
           <MobileSecondaryLink href="/terms" text="Legal" />
-          <MobileSecondaryLink
-            href="https://help.steep.app/introduction/try-with-demo-data"
-            text="Demo data"
-            opensInNewWindow
-          />
         </div>
         <div className="flex flex-col xs:flex-row px-9 gap-3 mt-auto">
-          <a className="block" href="https://web.steep.app/sign-up">
+          <a className="block" href="https://sealos.run/downloads">
             <SteepButton
               className="w-full!"
-              label="Get started"
+              label="Download Sealos"
               variant={isDark ? "primary-reverse" : "primary"}
             />
           </a>
-          <Link className="block" href="/demo">
+          <Link className="block" href="https://sealos.run/downloads">
             <SteepButton
               className="w-full!"
               variant={isDark ? "secondary-reverse" : "secondary"}
-              label="Book a demo"
+              label="Claim $5 Credit"
             />
           </Link>
         </div>
@@ -958,7 +944,7 @@ export function SteepNav({ activePage, mode = "light" }: SteepNavProps) {
       <div className="relative z-10 h-16 max-w-[1200px] w-full flex items-center shrink-0">
         <Link
           href="/"
-          aria-label="Steep home"
+          aria-label="Sealos home"
           className={clsx(
             "flex-1 sm:flex-none sm:w-28 pb-1 pl-1 transition-opacity duration-300",
             isMobileMenuOpen
@@ -975,30 +961,38 @@ export function SteepNav({ activePage, mode = "light" }: SteepNavProps) {
         </Link>
         <div className="hidden sm:flex justify-center items-center flex-1">
           <NavTopItem
-            label="Product"
+            label="Capabilities"
             mode={mode}
-            href="/"
-            active={activePage === "product"}
-            onHoverMenu={() => setHoveredMenu("product")}
+            href="#capabilities"
+            active={activePage === "capabilities"}
+            onHoverMenu={() => setHoveredMenu(null)}
           />
           <NavTopItem
-            label="Resources"
+            label="Why Sealos"
             mode={mode}
-            active={activePage === "resources"}
-            onHoverMenu={() => setHoveredMenu("resources")}
+            href="#equation"
+            active={activePage === "equation"}
+            onHoverMenu={() => setHoveredMenu(null)}
           />
           <NavTopItem
-            label="Customers"
+            label="Stack Canvas"
             mode={mode}
-            href="/customers"
-            active={activePage === "customers"}
-            onHoverMenu={() => setHoveredMenu("customers")}
+            href="#canvas"
+            active={activePage === "canvas"}
+            onHoverMenu={() => setHoveredMenu(null)}
           />
           <NavTopItem
-            href="/pricing"
+            href="#ops"
             mode={mode}
-            label="Pricing"
-            active={activePage === "pricing"}
+            label="Ops & Primitives"
+            active={activePage === "ops"}
+            onHoverMenu={() => setHoveredMenu(null)}
+          />
+          <NavTopItem
+            href="#faq"
+            mode={mode}
+            label="FAQ"
+            active={activePage === "faq"}
             onHoverMenu={() => setHoveredMenu(null)}
           />
         </div>
@@ -1010,29 +1004,29 @@ export function SteepNav({ activePage, mode = "light" }: SteepNavProps) {
               : "opacity-100 pointer-events-auto",
           )}
         >
-          <Link href="/demo" className="hidden lg:block">
+          <Link href="https://sealos.run/downloads" className="hidden lg:block">
             <SteepButton
               variant="tertiary"
               textColor={mode === "dark" ? "text-white" : "text-primary-text"}
               size="small"
-              label="Book a demo"
+              label="Claim $5 Credit"
             />
           </Link>
           <a
-            href="https://web.steep.app/sign-up"
+            href="https://sealos.run/downloads"
             target="_blank"
             rel="noreferrer"
             className="contents"
           >
             <SteepButton
               size="small"
-              label="Get started"
+              label="Download Sealos"
               variant={mode === "dark" ? "secondary-reverse" : "secondary"}
               className="xs:hidden!"
             />
             <SteepButton
               size="small"
-              label="Get started"
+              label="Download Sealos"
               variant={mode === "dark" ? "primary-reverse" : "primary"}
               className="hidden! xs:inline-flex!"
             />

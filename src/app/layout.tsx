@@ -2,19 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Steep: AI analytics for faster insights and zero chaos",
+  metadataBase: new URL("https://sealos.io"),
+  title: "Sealos — Ship Full-Stack Apps & Databases with Ops Agent",
   description:
-    "Steep is an AI analytics platform built on governed metrics that powers analysis, reporting and company-wide engagement.",
+    "Deploy local code, Vibe Coding apps, GitHub repos, open-source templates, and databases in minutes. Your dedicated natural-language Ops Agent runs it all.",
   openGraph: {
-    title: "Steep: AI analytics for faster insights and zero chaos",
+    title: "Sealos — Ship Any Project in Minutes with Your Dedicated Ops Agent",
     description:
-      "Steep is an AI analytics platform built on governed metrics that powers analysis, reporting and company-wide engagement.",
-    url: "https://steep.app/",
-    siteName: "Steep",
+      "Ops Agent + Cloud Hosting (Vercel/Railway) + Managed DB (Supabase/MongoCloud) + Storage & AI Gateway in one native workspace.",
+    url: "https://sealos.io/",
+    siteName: "Sealos",
     type: "website",
     images: [
       {
-        url: "https://steep.app/images/og/home.png",
+        url: "/images/og/home.png",
         width: 1200,
         height: 630,
       },
@@ -22,10 +23,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Steep: AI analytics for faster insights and zero chaos",
+    title: "Sealos — Ship Any Project in Minutes with Your Dedicated Ops Agent",
     description:
-      "Steep is an AI analytics platform built on governed metrics that powers analysis, reporting and company-wide engagement.",
-    images: ["https://steep.app/images/og/home.png"],
+      "Ops Agent + Cloud Hosting (Vercel/Railway) + Managed DB (Supabase/MongoCloud) + Storage & AI Gateway in one native workspace.",
+    images: ["/images/og/home.png"],
   },
 };
 

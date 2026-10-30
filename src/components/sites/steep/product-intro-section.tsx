@@ -1249,7 +1249,7 @@ export const ProductIntroSection = () => {
 
   return (
     <>
-      <Section ref={triggerRef} className="mt-16 lg:mt-0">
+      <Section id="equation" ref={triggerRef} className="mt-16 lg:mt-0">
         <SplitHeadingBlock
           isInView={isInView}
           centerAligned

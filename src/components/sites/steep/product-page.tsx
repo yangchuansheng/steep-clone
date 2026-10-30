@@ -1765,7 +1765,48 @@ function FourCardRow({
   );
 }
 
-function ScaleWithSteepSection() {
+export const SEALOS_CLOUD_PRIMITIVES: readonly ThreeCardItemData[] = [
+  {
+    title: "High-Availability Databases",
+    description:
+      "Standalone and replicated PostgreSQL, MySQL, MongoDB, and Redis with internal DNS and 14-day backups.",
+    image: "/images/product/scale-homescreen.png",
+  },
+  {
+    title: "Object Storage Buckets",
+    description:
+      "S3-compatible private and public buckets with folder uploads and 1-hour temporary share links.",
+    image: "/images/product/scale-teams.png",
+    bordered: true,
+  },
+  {
+    title: "Unified AI Gateway",
+    description:
+      "Route Chat, Embedding, Rerank, Audio, and PDF models with automatic OpenAI and Anthropic env mapping.",
+    image: "/images/product/scale-favorites.png",
+  },
+  {
+    title: "Desktop Preview & Workspaces",
+    description:
+      "Click live web or PPTX elements in the built-in browser to edit via chat across team workspaces.",
+    image: "/images/product/scale-speed.png",
+    bordered: true,
+  },
+];
+
+export interface ScaleWithSteepSectionProps {
+  id?: string;
+  heading?: React.ReactNode;
+  description?: React.ReactNode;
+  items?: readonly ThreeCardItemData[];
+}
+
+export function ScaleWithSteepSection({
+  id,
+  heading = PRODUCT_COPY.scaleWithSteepSection.title,
+  description = PRODUCT_COPY.scaleWithSteepSection.description,
+  items = SCALE_FEATURES,
+}: ScaleWithSteepSectionProps = {}) {
   const { isSmall } = useWindowSize();
   const { triggerRef, isInView } = useInViewTrigger({
     start: isSmall ? "top bottom-=200" : "top bottom-=300",
@@ -1773,12 +1814,12 @@ function ScaleWithSteepSection() {
 
   return (
     <>
-      <Section ref={triggerRef}>
+      <Section id={id} ref={triggerRef}>
         <div className="flex mt-15 sm:mt-30 xl:mt-40 mb-20 md:px-20 lg:px-0">
           <SplitHeadingBlock
             isInView={isInView}
-            heading={PRODUCT_COPY.scaleWithSteepSection.title}
-            description={PRODUCT_COPY.scaleWithSteepSection.description}
+            heading={heading}
+            description={description}
           />
         </div>
       </Section>
@@ -1787,10 +1828,20 @@ function ScaleWithSteepSection() {
         className="sm:mb-16 md:mb-24 xl:mb-40"
       >
         <div className="md:px-20 lg:px-0">
-          <FourCardRow items={SCALE_FEATURES} />
+          <FourCardRow items={items} />
         </div>
       </Section>
     </>
+  );
+}
+
+export function CloudPrimitivesSection() {
+  return (
+    <ScaleWithSteepSection
+      heading="Built-in cloud primitives"
+      description=""
+      items={SEALOS_CLOUD_PRIMITIVES}
+    />
   );
 }
 

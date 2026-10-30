@@ -2,16 +2,13 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React, { forwardRef, useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import clsx from "clsx";
 import {
   AnimatedImage,
   Section,
-  SectionBadgeLink,
   SnapCarousel,
   SplitHeadingBlock,
   STEEP_COPY,
-  SteepButton,
   useInViewTrigger,
 } from "./shared";
 
@@ -169,9 +166,6 @@ export const CustomerStorySection = () => {
         <div className="py-8 md:py-24 lg:py-40">
           <div className="flex flex-col md:flex-row justify-between gap-x-4 w-full">
             <div className="flex flex-col md:w-[50%] flex-1 xl:pt-8 md:pr-10 xl:pr-20 justify-between">
-              <Link href="/customers" className="mobile-padding-only">
-                <SectionBadgeLink text="Customer story" className="md:mb-8" />
-              </Link>
               <div className="md:hidden">
                 <SnapCarousel
                   items={CUSTOMER_STORIES}
@@ -220,18 +214,6 @@ export const CustomerStorySection = () => {
                       descriptionClassName="text-sm! lg:text-lg!"
                     />
                   </div>
-                </div>
-                <div className="flex gap-2 mt-4 text-insets">
-                  <Link href={CUSTOMER_STORIES[activeIndex].url}>
-                    <SteepButton
-                      label="Read the story"
-                      className="mix-blend-multiply"
-                      arrow
-                    />
-                  </Link>
-                  <Link href="/customers">
-                    <SteepButton label="All stories" variant="tertiary" />
-                  </Link>
                 </div>
               </div>
               <BrandTabBar

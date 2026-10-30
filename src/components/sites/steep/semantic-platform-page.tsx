@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import gsap from "gsap";
@@ -12,6 +12,7 @@ import {
   ClockRefresh36Icon,
   type IconProps,
   Section,
+  SEALOS_FAQ_ITEMS,
   SnapCarousel,
   SplitHeadingBlock,
   StaggerFeatureGrid,
@@ -22,6 +23,7 @@ import {
   useInViewTrigger,
   useStaggerReveal,
   useWindowSize,
+  VerticalAccordionTabs,
 } from "./shared";
 import type { MarbleShaderSettings } from "./product-page";
 
@@ -1821,5 +1823,34 @@ export function SemanticPlatformPage() {
         <GetStartedSection mode="dark" />
       </SteepLayout>
     </>
+  );
+}
+
+export function FaqSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const { isSmall } = useWindowSize();
+  const { triggerRef, isInView } = useInViewTrigger({
+    start: isSmall ? "top bottom-=200" : "top bottom-=300",
+  });
+
+  return (
+    <Section id="faq" ref={triggerRef} className="py-16 md:py-24 lg:py-32">
+      <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20">
+        <div className="lg:w-1/3">
+          <SplitHeadingBlock
+            isInView={isInView}
+            heading="Frequently asked questions"
+          />
+        </div>
+        <div className="lg:w-2/3">
+          <VerticalAccordionTabs
+            activeIndex={activeIndex}
+            handleTabClick={setActiveIndex}
+            sections={SEALOS_FAQ_ITEMS}
+            className="w-full lg:w-full mr-0!"
+          />
+        </div>
+      </div>
+    </Section>
   );
 }

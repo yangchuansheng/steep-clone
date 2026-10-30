@@ -8,7 +8,6 @@ import {
   type Ref,
 } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { RiveSectionCanvas } from "./rive-section-canvas";
@@ -18,11 +17,9 @@ import {
   HorizontalTabBar,
   NoiseOverlay,
   Section,
-  SectionBadgeLink,
   SnapCarousel,
   SplitHeadingBlock,
   STEEP_COPY,
-  SteepButton,
   useInViewTrigger,
   useWindowSize,
   VerticalAccordionTabs,
@@ -51,20 +48,6 @@ const PRODUCT_SECTIONS = [
     artboard: "Reports",
     duration: 17,
     description: STEEP_COPY.productSection.featureReports.description,
-  },
-  {
-    id: "drilldown",
-    label: STEEP_COPY.productSection.featureDrilldown.title,
-    artboard: "Drill-down",
-    duration: 13.16,
-    description: STEEP_COPY.productSection.featureDrilldown.description,
-  },
-  {
-    id: "targets",
-    label: STEEP_COPY.productSection.featureTargets.title,
-    artboard: "Targets",
-    duration: 8,
-    description: STEEP_COPY.productSection.featureTargets.description,
   },
   {
     id: "maps",
@@ -131,6 +114,14 @@ function LazyRiveViewportWrapper({
 
 const STACKED_MOBILE_FEATURES = [
   {
+    title: STEEP_COPY.productSection.featureAI.title,
+    description: STEEP_COPY.productSection.featureAI.description,
+    image: "/images/home/product-mobile-medium.png",
+    smallImage: "/images/home/product-mobile-square.png",
+    shadow: false,
+    border: false,
+  },
+  {
     title: STEEP_COPY.productSection.featureExplore.title,
     description: STEEP_COPY.productSection.featureExplore.description,
     image: "/images/home/product-explore-medium.png",
@@ -138,35 +129,13 @@ const STACKED_MOBILE_FEATURES = [
     shadow: false,
     border: true,
   },
-  {
-    title: STEEP_COPY.productSection.featureReports.title,
-    description: STEEP_COPY.productSection.featureReports.description,
-    image: "/images/product/hero-report.png",
-    smallImage: "/images/home/product-reports-square.png",
-    shadow: false,
-    border: true,
-  },
-  {
-    title: STEEP_COPY.productSection.featureMobile.title,
-    description: STEEP_COPY.productSection.featureMobile.description,
-    image: "/images/home/product-mobile-medium.png",
-    smallImage: "/images/home/product-mobile-square.png",
-    shadow: false,
-    border: false,
-  },
 ];
 
 const CAROUSEL_MOBILE_FEATURES = [
   {
-    title: STEEP_COPY.productSection.featureDrilldown.title,
-    description: STEEP_COPY.productSection.featureDrilldown.description,
-    image: "/images/home/product-drilldown-square.png",
-    border: true,
-  },
-  {
-    title: STEEP_COPY.productSection.featureTargets.title,
-    description: STEEP_COPY.productSection.featureTargets.description,
-    image: "/images/home/product-targets-square.png",
+    title: STEEP_COPY.productSection.featureReports.title,
+    description: STEEP_COPY.productSection.featureReports.description,
+    image: "/images/home/product-reports-square.png",
     border: true,
   },
   {
@@ -233,7 +202,7 @@ export function ProductSection() {
     start: "top bottom-=300",
   });
   const activeSection = PRODUCT_SECTIONS[activeIndex] ?? PRODUCT_SECTIONS[0];
-  const { isSmall, isXLarge, isMedium } = useWindowSize();
+  const { isSmall, isXLarge } = useWindowSize();
 
   useEffect(() => {
     activeIndexRef.current = activeIndex;
@@ -265,6 +234,7 @@ export function ProductSection() {
 
   return (
     <div
+      id="capabilities"
       ref={triggerRef}
       className="py-12 md:pt-20 relative md:pb-32 flex overflow-hidden"
       style={{ background: "#FAFAFB" }}
@@ -283,9 +253,6 @@ export function ProductSection() {
       )}
       <Section className="z-10" noPaddingOnSmallScreens={true}>
         <div className="mobile-padding-only">
-          <Link href="/product">
-            <SectionBadgeLink className="mb-4" text="Product" />
-          </Link>
           <div className="flex flex-col items-start">
             <SplitHeadingBlock
               isInView={isInView}
@@ -294,17 +261,6 @@ export function ProductSection() {
               heading={STEEP_COPY.productSection.title}
               description={STEEP_COPY.productSection.description}
               descriptionClassName="md:max-w-lg max-w-md "
-              cta={
-                isMedium && (
-                  <Link href="/product">
-                    <SteepButton
-                      label="Learn more"
-                      arrow={true}
-                      variant="secondary"
-                    />
-                  </Link>
-                )
-              }
             />
           </div>
         </div>
@@ -362,17 +318,6 @@ export function ProductSection() {
                 </div>
               </div>
             </div>
-          </div>
-        )}
-        {isSmall && (
-          <div className="mt-8 mobile-padding-only">
-            <Link href="/product">
-              <SteepButton
-                variant="secondary"
-                label="Explore and analyze"
-                arrow={true}
-              />
-            </Link>
           </div>
         )}
       </Section>

@@ -85,7 +85,6 @@ export const BrandCarousel = ({ className }: { className?: string }) => {
   return (
     <div className={clsx("w-full", className)}>
       <div className="md:w-full py-8 flex flex-col mx-auto gap-7 md:gap-8 justify-center items-center">
-        <div>Trusted by teams at</div>
         <div className="w-full relative overflow-hidden">
           <div className="absolute left-0 top-0 bottom-0 w-[20%] bg-linear-to-r from-primary-background to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-[20%] bg-linear-to-l from-primary-background to-transparent z-10 pointer-events-none" />
@@ -113,10 +112,10 @@ const AiPromptBox = () => (
   <div className="ai-button-container relative bg-white rounded-[20px] overflow-hidden flex w-full h-[100px] flex-col justify-between pr-3 pl-5 pt-4 pb-3">
     <div className="relative">
       <span className="ai-button-text text-secondary-text text-[15px] font-book leading-normal">
-        Ask anything...
+        Describe the app you want to deploy...
       </span>
       <span className="ai-button-text-typed absolute left-0 top-0 text-primary-text text-[15px] font-book leading-normal whitespace-nowrap overflow-hidden w-0">
-        What’s the impact on subscriptions from the big launch this month?
+        Deploy this Next.js repo with replicated PostgreSQL, Redis, and HTTPS
       </span>
     </div>
     <div className="ai-button-icons flex justify-between items-center">
@@ -397,15 +396,15 @@ export const HeroDesktop = ({ carousel }: { carousel: React.ReactNode }) => {
           <SplitHeadingBlock
             centerAligned
             heading={renderHeroTitle()}
-            headingClassName="text-center text-[100px]! leading-[1.05] tracking-tight"
+            headingClassName="text-center text-[82px]! leading-[1.05] tracking-tight"
             description={STEEP_COPY.hero.description}
             descriptionClassName="text-center text-primary-text! leading-normal! max-w-[780px]!"
             cta={
               <div className="flex items-center justify-center gap-x-2">
-                <Link href="https://web.steep.app/sign-up">
+                <Link href="https://sealos.run/downloads">
                   <SteepButton size="regular" label={STEEP_COPY.hero.cta} />
                 </Link>
-                <Link href="/demo">
+                <Link href="#capabilities">
                   <SteepButton
                     variant="tertiary"
                     size="regular"
@@ -543,10 +542,10 @@ export const HeroMobile = () => (
         descriptionClassName="text-center text-base! md:text-xl! lg:text-2xl! text-primary-text! leading-normal! px-10"
         cta={
           <div className="flex items-center justify-center gap-x-2 mt-2">
-            <Link href="https://web.steep.app/sign-up">
+            <Link href="https://sealos.run/downloads">
               <SteepButton size="regular" label={STEEP_COPY.hero.cta} />
             </Link>
-            <Link href="/demo">
+            <Link href="#capabilities">
               <SteepButton
                 variant="tertiary"
                 size="regular"

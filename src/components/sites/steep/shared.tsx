@@ -528,73 +528,74 @@ export const STEEP_COPY = {
   hero: {
     title: () => (
       <>
-        For companies <br /> that run on data
+        Ship full-stack apps
+        <br />
+        in minutes
       </>
     ),
     description: (
       <>
-        Steep is an AI analytics platform that brings trusted metrics into
-        everyday work, so every team knows what’s happening and can act on it.
+        Meet your dedicated 24/7 Ops Agent. Describe what you need in plain
+        language to build containers, wire databases, and go live over HTTPS.
       </>
     ),
-    cta: "Get started",
-    ctaSecondary: "Book a demo",
+    cta: "Download for macOS",
+    ctaSecondary: "Watch 60s Demo",
     banner: {
-      label: "New in Steep: API, MCP and code updates",
-      href: "/changelog/entities-api-mcp",
+      label: "Claim $5 Free Cloud Credit on First Login",
+      href: "https://sealos.run/downloads",
     },
   },
   productIntro: {
     title: (
       <>
-        A new kind of
+        One workspace for
         <br />
-        analytics platform
+        your entire stack
       </>
     ),
     description: "",
-    cta: "Make the switch",
+    cta: "Download Sealos",
     cardOne: {
-      title: "Built on metrics",
+      title: "Cloud App Platform",
       description:
-        "No more dashboards. With Steep, data teams ship governed metrics that power all your analysis and reporting.",
+        "Vercel, Cloudflare Pages, Railway, and Render in one click. Select a folder or repo and ship to a live HTTPS domain.",
     },
     cardTwo: {
-      title: "Powered by AI",
+      title: "Managed Databases",
       description:
-        "With AI-powered workflows in Steep, anyone can do deep analysis and generate reports. All using trusted metrics.",
+        "Supabase, MongoDB Cloud, Upstash, and PlanetScale built in. Standalone or replicated instances with daily backups.",
     },
     cardThree: {
-      title: "Designed for engagement",
+      title: "Storage & AI Gateway",
       description:
-        "Data teams work smarter. Users move faster. And your whole company builds a stronger data culture.",
+        "Cloudflare R2, AWS S3, and OpenRouter unified. Visual buckets with 1-hour share links and automatic key mapping.",
     },
   },
   semanticPlatform: {
     title: (
       <>
-        Ship metrics,
+        Every service on
         <br />
-        not dashboards
+        one live canvas
       </>
     ),
-    description:
-      "A complete semantic platform to govern and publish all your metrics. No more repeating yourself.",
-    cta: "Learn more",
+    description: "",
+    cta: "Download Sealos",
     featureSemanticModel: {
-      title: "Semantic platform",
+      title: "New API Gateway",
       description:
-        "Define metrics, dimensions, entities and power all of your analysis and reporting with governed building blocks.",
+        "new-api wired to replicated PostgreSQL 16, Redis 7.2 cache, and AI Gateway on api-hub.sealos.run.",
     },
     featureMetricsCatalog: {
-      title: "Metrics catalog",
+      title: "Web & Lead Capture",
       description:
-        "Organize and publish all your metric in one place. No more documentation that no one looks at.",
+        "Next.js quote deck and Node worker persisting client submissions to PostgreSQL on quote-deck.sealos.run.",
     },
     featureDefineInCode: {
-      title: "Define in code",
+      title: "Multi-Client SaaS",
       description:
-        "Manage your semantic model in code with peer reviews and strong version control.",
+        "Isolated agency workspaces running Next.js 15, Go APIs, replicated PostgreSQL, and per-client Anthropic billing.",
     },
     featureDefineInApp: {
       title: "Manage in app",
@@ -602,22 +603,24 @@ export const STEEP_COPY = {
         "Manage your semantic model efficiently using the comprehensive admin interface.",
     },
     featureSteepApi: {
-      title: "Steep API",
+      title: "Dify & n8n Stack",
       description:
-        "Use your metrics anywhere. Export data, connect to notebooks, or embed in your own application.",
+        "dify-web and dify-worker with auto-filled credentials, replicated PostgreSQL, and Redis queue on dify-studio.sealos.run.",
     },
     featureFineGrainedPermissions: {
-      title: "Fine-grained permissions",
-      description: "Control who can access metrics and row-level data.",
+      title: "Live Dependency Topology",
+      description:
+        "Private endpoints and ${{service.NAME}} references wired visually.",
     },
     featureSmartCaching: {
-      title: "Smart caching",
+      title: "Direct Public Domains",
       description:
-        "Offload your data warehouse. Instant responses for users.",
+        "Live HTTPS domain on every web card with custom CNAME binding.",
     },
     featureDbtCubeIntegrations: {
-      title: "dbt + Cube integrations",
-      description: "Seamless integrations to stand-alone semantic layers.",
+      title: "Multi-Workspace Isolation",
+      description:
+        "Separate credentials and billing across personal and client stacks.",
     },
     featureOsiReady: {
       title: "OSI ready",
@@ -626,24 +629,29 @@ export const STEEP_COPY = {
     },
   },
   productSection: {
-    title: "Engage everyone",
-    description:
-      "AI-powered workflows that unlocks deep analysis and reporting for all users.",
-    cta: "Learn more",
+    title: (
+      <>
+        Four everyday
+        <br />
+        workflows
+      </>
+    ),
+    description: "",
+    cta: "Download Sealos",
     featureAI: {
-      title: "AI",
+      title: "Local Code & Web",
       description:
-        "Ask complex questions and get deep, reliable insights. All powered by governed metrics.",
+        "Ship local folders, Vibe Coding projects, and interactive HTML decks with instant HTTPS links.",
     },
     featureExplore: {
-      title: "Explore",
+      title: "GitHub & Databases",
       description:
-        "Jump into metrics and explore visualizations in seconds. Go deeper with seamless AI support.",
+        "Connect repositories, detect branches and ports, and wire PostgreSQL automatically.",
     },
     featureReports: {
-      title: "Reports",
+      title: "Template Auto-Fill",
       description:
-        "Create or generate any type of content. From dashboards and business reviews to deep-dive analysis.",
+        "Launch n8n, Dify, New API, and WordPress with one-click credential and secret generation.",
     },
     featureDrilldown: {
       title: "Drill down",
@@ -656,9 +664,9 @@ export const STEEP_COPY = {
         "Load target data centrally and have it be available for any metric, anywhere in your workspace.",
     },
     featureMaps: {
-      title: "Maps",
+      title: "Canvas & AI Gateway",
       description:
-        "Simple, intuitive maps made to be explored by everyone. Just open the map and dive into your metrics instantly.",
+        "Expand any project canvas with replicated databases, Docker images, and OpenAI or Anthropic routing.",
     },
     featureMobile: {
       title: "Mobile",
@@ -667,52 +675,50 @@ export const STEEP_COPY = {
     },
   },
   aiSection: {
-    title: "Unlock deep analysis",
-    description:
-      "Steep AI goes beyond simple answers to deliver deep, comprehensive analysis grounded in your semantic model.",
-    cta: "Learn more",
+    title: "Your 24/7 Ops Agent",
+    description: "",
+    cta: "Download Sealos",
     featureOne: {
-      title: "Answers you can trust",
+      title: "1 vCPU 2 GB · $5/mo",
       description:
-        "Steep AI is powered by your semantic model and answers reflect governed metrics.",
+        "Starter tier for side projects and web decks, covered in week one by your $5 welcome credit.",
     },
     featureTwo: {
-      title: "Generate reports",
+      title: "4 vCPU 16 GB · $36/mo",
       description:
-        "Turn any chat into a shareable report, ready to share, edit and build on.",
+        "Production tier vs $70–$100/mo on stitched clouds. Save 50%+ on compute and 1–3 Ops roles.",
     },
     featureThree: {
-      title: "Support teams where they work",
+      title: "8 vCPU 32 GB · $72/mo",
       description:
-        "Agents across your stack work from the same governed metrics, through Steep's API and MCP.",
+        "High-concurrency SaaS cluster with sub-millisecond private networking and zero internal traffic fees.",
     },
   },
   getStarted: {
-    title: "Get started for free",
-    description:
-      "Try Steep for free with up to 3 users. Connect your database or explore in demo mode.",
-    cta: "Get started",
-    ctaSecondary: "Book a demo",
+    title: "Ship in minutes with Sealos",
+    description: "Claim your $5 free cloud credit on first login.",
+    cta: "Download for macOS",
+    ctaSecondary: "Download for Windows",
   },
   customerStorySection: {
-    label: "Customer story",
-    cta: "Read the story",
-    ctaSecondary: "All stories",
+    label: "Why Sealos",
+    cta: "Download Sealos",
+    ctaSecondary: "Compare workflows",
     customerVoi: {
-      quote: "“I have never seen BI adoption like this in my career.”",
-      subhead: "Why Voi switched from Tableau to Steep",
+      quote: "“One native workspace and one pay-as-you-go bill.”",
+      subhead: "Control Surface · Replace stitched PaaS bills and SSH terminal upkeep",
     },
     customerJuni: {
-      quote: "“Steep hits the perfect balance between power and usability.”",
-      subhead: "From data-blind to insight-led at Juni",
+      quote: "“Sub-millisecond private networking with zero traffic fees.”",
+      subhead: "App & Database Link · Replace cross-cloud round-trips and manual Docker bridge rules",
     },
     customerBounce: {
-      quote: "“We tested 20 tools before choosing Steep.”",
-      subhead: "How Bounce moved from shipping dashboards to metrics",
+      quote: "“Every deployment previews a structured Deploy Plan first.”",
+      subhead: "Change Safety · Replace scattered YAML pipelines and risky live SSH commands",
     },
     customerOnceupon: {
-      quote: "“There’s now one place where people can look for an answer.”",
-      subhead: "Once Upon’s journey to metrics-first BI",
+      quote: "“Live logs, metrics, and AI troubleshooting in one view.”",
+      subhead: "Day-2 Operations · Replace multi-dashboard log hunting and raw container tailing",
     },
   },
 };
@@ -2038,7 +2044,8 @@ export function StaggerFeatureGrid({
     <div
       ref={triggerRef}
       className={clsx(
-        "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:divide-x gap-x-10 lg:gap-x-8 xl:gap-x-8 gap-y-2 lg:gap-y-0",
+        "grid grid-cols-1 sm:grid-cols-2 xl:divide-x gap-x-10 lg:gap-x-8 xl:gap-x-8 gap-y-2 lg:gap-y-0",
+        items.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4",
         className,
         mode === "dark"
           ? "fill-white text-white divide-white/5"
@@ -2177,3 +2184,53 @@ export function ThreeCardRow({ items, mode = "light" }: ThreeCardRowProps) {
     </>
   );
 }
+
+export interface SealosFaqItem extends VerticalAccordionSection {
+  description: string;
+}
+
+export const SEALOS_FAQ_ITEMS: readonly SealosFaqItem[] = [
+  {
+    id: "faq-1",
+    label: "What projects can I deploy and share with Sealos?",
+    description:
+      "Deploy full-stack codebases, Vibe Coding projects, GitHub repositories, interactive HTML decks, managed databases (PostgreSQL, MySQL, MongoDB, Redis), and open-source stacks like WordPress, n8n, Dify, and Open WebUI with instant HTTPS links.",
+    duration: 10,
+  },
+  {
+    id: "faq-2",
+    label: "How does the dedicated Ops Agent simplify deployment and maintenance?",
+    description:
+      "Your Ops Agent turns plain-language requests into container builds, database wiring, template auto-fill secrets, and SSL domains, then handles 502/OOM diagnostics, zero-downtime updates, local tunnels, and backups.",
+    duration: 10,
+  },
+  {
+    id: "faq-3",
+    label:
+      "How does Sealos compare to using Cloudflare, Vercel, Railway, Supabase, and S3 separately?",
+    description:
+      "Sealos unifies app hosting, managed databases, S3-compatible storage, AI routing, and HTTPS domains on one private <1ms network under a single pay-as-you-go balance that saves over 50%.",
+    duration: 10,
+  },
+  {
+    id: "faq-4",
+    label: "How does Sealos keep production changes and cloud billing predictable?",
+    description:
+      "Every deployment and resource change presents a Deploy Plan card showing exact vCPU, memory, storage, and environment settings with selectable Confirm before changes, Auto review, and Full access modes.",
+    duration: 10,
+  },
+  {
+    id: "faq-5",
+    label: "How do I claim the welcome credit when downloading Sealos?",
+    description:
+      "Download Sealos and complete your first sign-in to receive $5 in free cloud credit automatically in your workspace balance for apps, databases, buckets, and AI Gateway requests.",
+    duration: 10,
+  },
+  {
+    id: "faq-6",
+    label: "Where do my applications and data run, and how portable is my stack?",
+    description:
+      "Applications, databases, and buckets run in isolated cloud workspaces using standard OCI container images and native Kubernetes primitives, keeping your codebase portable everywhere.",
+    duration: 10,
+  },
+];

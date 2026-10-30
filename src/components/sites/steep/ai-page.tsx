@@ -16,6 +16,7 @@ import {
 import {
   FeatureImageStack,
   HorizontalTabBar,
+  type HorizontalTabBarItem,
   type IconProps,
   NoiseOverlay,
   Section,
@@ -1415,6 +1416,7 @@ const INTRO_TABS = [
     duration: 8,
     description: AI_COPY.introSection.features.featureOne.description,
     image: "/images/ai/carousel-1-large.png",
+    smallImage: "/images/ai/carousel-1-small.png",
   },
   {
     id: "results",
@@ -1423,6 +1425,7 @@ const INTRO_TABS = [
     duration: 8,
     description: AI_COPY.introSection.features.featureTwo.description,
     image: "/images/ai/carousel-2-large.png",
+    smallImage: "/images/ai/carousel-2-small.png",
   },
   {
     id: "ready-to-share",
@@ -1431,17 +1434,111 @@ const INTRO_TABS = [
     duration: 8,
     description: AI_COPY.introSection.features.featureThree.description,
     image: "/images/ai/carousel-3-large.png",
+    smallImage: "/images/ai/carousel-3-small.png",
   },
 ] as const;
 
-function AiIntroMobileStack() {
+export interface AiIntroTabItem {
+  id: string;
+  label: string;
+  artboard: string;
+  duration: number;
+  description: string;
+  image: string;
+  smallImage?: string;
+}
+
+export const SEALOS_OPS_TABS: readonly AiIntroTabItem[] = [
+  {
+    id: "ops-oom",
+    label: "502 & OOM Diagnostics",
+    artboard: "ops-oom",
+    duration: 8,
+    description:
+      "Correlates OOMKilled exit code 137 logs and memory spikes into a one-click memory and connection upgrade card.",
+    image: "/images/ai/carousel-1-large.png",
+    smallImage: "/images/ai/carousel-1-small.png",
+  },
+  {
+    id: "ops-hot-update",
+    label: "Hot Update & Rollback",
+    artboard: "ops-hot-update",
+    duration: 8,
+    description:
+      "Builds incremental images, verifies 200 OK across static assets, and rolls back in one click.",
+    image: "/images/ai/carousel-2-large.png",
+    smallImage: "/images/ai/carousel-2-small.png",
+  },
+  {
+    id: "ops-db-tunnel",
+    label: "DB Scaling & Local Tunnel",
+    artboard: "ops-db-tunnel",
+    duration: 8,
+    description:
+      "Expands volume storage online and opens an encrypted 127.0.0.1:15432 tunnel for local database tools.",
+    image: "/images/ai/carousel-3-large.png",
+    smallImage: "/images/ai/carousel-3-small.png",
+  },
+  {
+    id: "ops-config-mount",
+    label: "Config Mount & Batch Env",
+    artboard: "ops-config-mount",
+    duration: 8,
+    description:
+      "Mounts container config files like /etc/nginx/nginx.conf and parses batch environment variables.",
+    image: "/images/ai/carousel-1-large.png",
+    smallImage: "/images/ai/carousel-1-small.png",
+  },
+  {
+    id: "ops-gateway-trace",
+    label: "AI Gateway Tracing",
+    artboard: "ops-gateway-trace",
+    duration: 8,
+    description:
+      "Tracks 16-char Request IDs, TTFT latency, and model spend while rotating OpenAI or Anthropic keys.",
+    image: "/images/ai/carousel-2-large.png",
+    smallImage: "/images/ai/carousel-2-small.png",
+  },
+  {
+    id: "ops-health-hints",
+    label: "7 Service Health Hints",
+    artboard: "ops-health-hints",
+    duration: 8,
+    description:
+      "Surfaces runtime hints for active deploys, unhealthy replicas, restarts, memory limits, and backups.",
+    image: "/images/ai/carousel-3-large.png",
+    smallImage: "/images/ai/carousel-3-small.png",
+  },
+];
+
+export const SEALOS_OPS_LOOP_STEPS: readonly HorizontalTabBarItem[] = [
+  { id: "step-1", label: "1. Collect Logs & Metrics" },
+  { id: "step-2", label: "2. Diagnose Root Cause" },
+  { id: "step-3", label: "3. Generate Deploy Plan" },
+  { id: "step-4", label: "4. Zero-Downtime Rollout" },
+  { id: "step-5", label: "5. Verify Static Assets" },
+  { id: "step-6", label: "6. Continuous Health Hints" },
+];
+
+function AiIntroMobileStack({
+  items = INTRO_MOBILE_ITEMS,
+}: {
+  items?: readonly {
+    title: string;
+    description: string;
+    image: string;
+    smallImage: string;
+    shadow?: boolean;
+    border?: boolean;
+  }[];
+}) {
   return (
     <Section
       noPaddingOnSmallScreens={true}
       className="mb-7 xs:mb-8 lg:mb-10 bg-[#F7F7F8] py-10"
     >
       <div className="mobile-padding">
-        {INTRO_MOBILE_ITEMS.map((item, idx) => (
+        {items.map((item, idx) => (
           <FeatureImageStack
             key={idx}
             title={item.title}
@@ -1457,13 +1554,27 @@ function AiIntroMobileStack() {
   );
 }
 
-function AiIntroSection() {
+export interface AiIntroSectionProps {
+  id?: string;
+  heading?: React.ReactNode;
+  description?: React.ReactNode;
+  tabs?: readonly AiIntroTabItem[];
+  stepBarItems?: readonly HorizontalTabBarItem[];
+}
+
+export function AiIntroSection({
+  id,
+  heading = AI_COPY.introSection.title,
+  description = AI_COPY.introSection.description,
+  tabs = INTRO_TABS,
+  stepBarItems,
+}: AiIntroSectionProps = {}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animationKey, setAnimationKey] = useState(1);
   const { triggerRef, isInView } = useInViewTrigger({
     start: "top bottom-=300",
   });
-  const activeSection = INTRO_TABS[activeIndex];
+  const activeSection = tabs[activeIndex] ?? tabs[0];
   const { isSmall, isXLarge } = useWindowSize();
 
   useEffect(() => {
@@ -1488,18 +1599,27 @@ function AiIntroSection() {
   };
 
   useEffect(() => {
-    if (activeIndex >= INTRO_TABS.length - 1) return;
+    if (activeIndex >= tabs.length - 1) return;
     const timer = window.setTimeout(() => {
       setActiveIndex((prev) =>
-        prev < INTRO_TABS.length - 1 ? prev + 1 : prev,
+        prev < tabs.length - 1 ? prev + 1 : prev,
       );
       setAnimationKey((prev) => prev + 1);
     }, 1000 * activeSection.duration);
     return () => window.clearTimeout(timer);
-  }, [activeIndex, animationKey, activeSection.duration]);
+  }, [activeIndex, animationKey, activeSection.duration, tabs.length]);
+
+  const mobileItems = tabs.map((tab, idx) => ({
+    title: tab.label,
+    description: tab.description,
+    image: tab.image,
+    smallImage: tab.smallImage ?? tab.image,
+    shadow: false,
+    border: idx < tabs.length - 1,
+  }));
 
   return (
-    <div className="py-12 md:pt-20 relative md:pb-32 flex overflow-hidden">
+    <div id={id} className="py-12 md:pt-20 relative md:pb-32 flex overflow-hidden">
       <Section className="z-10" noPaddingOnSmallScreens={true}>
         <div className="mobile-padding-only">
           <Section ref={triggerRef}>
@@ -1507,15 +1627,24 @@ function AiIntroSection() {
               <SplitHeadingBlock
                 isInView={isInView}
                 centerAligned={true}
-                heading={AI_COPY.introSection.title}
-                description={AI_COPY.introSection.description}
+                heading={heading}
+                description={description}
                 descriptionClassName="max-w-[600px]"
               />
             </div>
           </Section>
         </div>
+        {stepBarItems && !isSmall && (
+          <HorizontalTabBar
+            itemWidth="full"
+            buttonsEnabled={false}
+            items={stepBarItems}
+            activeIndex={activeIndex}
+            onSelect={handleTabClick}
+          />
+        )}
         {isSmall ? (
-          <AiIntroMobileStack />
+          <AiIntroMobileStack items={mobileItems} />
         ) : (
           <div className="relative flex flex-col bg-[#F7F7F8] w-full mt-4 rounded-2xl ring-1 ring-trans-5 overflow-hidden bg">
             {isXLarge && (
@@ -1536,7 +1665,7 @@ function AiIntroSection() {
                 <HorizontalTabBar
                   itemWidth="full"
                   buttonsEnabled={false}
-                  items={INTRO_TABS}
+                  items={tabs}
                   activeIndex={activeIndex}
                   onSelect={handleTabClick}
                 />
@@ -1544,7 +1673,7 @@ function AiIntroSection() {
                   key={activeIndex}
                   className="max-w-lg text-primary-text/90 text-sm mb-12 animate-fade-in-y"
                 >
-                  {INTRO_TABS[activeIndex].description}
+                  {activeSection.description}
                 </p>
               </div>
             )}
@@ -1554,7 +1683,7 @@ function AiIntroSection() {
                   activeIndex={activeIndex}
                   animationKey={animationKey}
                   handleTabClick={handleTabClick}
-                  sections={INTRO_TABS}
+                  sections={tabs}
                   className="pl-16 mr-0! min-w-[350px]"
                 />
               )}
@@ -1574,6 +1703,24 @@ function AiIntroSection() {
         )}
       </Section>
     </div>
+  );
+}
+
+export function OpsDayTwoSection() {
+  return (
+    <AiIntroSection
+      id="ops"
+      heading={
+        <>
+          Autonomous Day-2
+          <br />
+          operations
+        </>
+      }
+      description=""
+      tabs={SEALOS_OPS_TABS}
+      stepBarItems={SEALOS_OPS_LOOP_STEPS}
+    />
   );
 }
 

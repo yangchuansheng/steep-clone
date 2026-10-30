@@ -2,17 +2,14 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Image from "next/image";
-import Link from "next/link";
 import clsx from "clsx";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   NoiseOverlay,
   Section,
-  SectionBadgeLink,
   SplitHeadingBlock,
   STEEP_COPY,
-  SteepButton,
   ThreeCardRow,
   useInViewTrigger,
   useWindowSize,
@@ -105,10 +102,10 @@ export function MaryPersonaCard({
 }) {
   return (
     <PersonaCard
-      name="Mary"
-      role="Finance"
+      name="Alex"
+      role="Full-Stack"
       avatarSrc="/images/ai/face-2.jpg"
-      message="Are subscriptions growing in line with revenue expectations?"
+      message="Deploy my local Next.js app with replicated Postgres and Redis"
       className={className}
       messageClassName={messageClassName}
     />
@@ -124,10 +121,10 @@ export function CarlPersonaCard({
 }) {
   return (
     <PersonaCard
-      name="Carl"
-      role="Sales"
+      name="Sam"
+      role="Open Source"
       avatarSrc="/images/ai/face-1.jpg"
-      message="Analyze customer segments to understand what's performing the best and where we have potential to grow"
+      message="Launch Dify and New API with auto-filled credentials and persistent volumes"
       className={className}
       messageClassName={messageClassName}
     />
@@ -143,10 +140,10 @@ export function JosephinePersonaCard({
 }) {
   return (
     <PersonaCard
-      name="Josephine"
-      role="Marketing"
+      name="Maya"
+      role="Web & Leads"
       avatarSrc="/images/ai/face-3.jpg"
-      message="Which campaigns drive the most Ad Conversions? Should we reallocate budget?"
+      message="Publish this interactive quote deck over HTTPS and save form leads to Postgres"
       className={className}
       messageClassName={messageClassName}
     />
@@ -191,7 +188,7 @@ const AI_FEATURES = [
 ];
 
 export function AiSection() {
-  const { isSmall, isMedium } = useWindowSize();
+  const { isSmall } = useWindowSize();
   const { triggerRef, isInView } = useInViewTrigger({
     start: isSmall ? "top bottom-=200" : "top bottom-=300",
   });
@@ -217,9 +214,6 @@ export function AiSection() {
         noPaddingOnSmallScreens={true}
       >
         <div className="mobile-padding-only">
-          <Link href="/ai">
-            <SectionBadgeLink className="mb-4" text="Steep AI" />
-          </Link>
           <div className="flex flex-col items-start">
             <SplitHeadingBlock
               isInView={isInView}
@@ -228,17 +222,6 @@ export function AiSection() {
               heading={STEEP_COPY.aiSection.title}
               description={STEEP_COPY.aiSection.description}
               descriptionClassName="md:max-w-lg max-w-md "
-              cta={
-                isMedium && (
-                  <Link href="/ai">
-                    <SteepButton
-                      label={STEEP_COPY.aiSection.cta}
-                      arrow={true}
-                      variant="secondary"
-                    />
-                  </Link>
-                )
-              }
             />
           </div>
         </div>

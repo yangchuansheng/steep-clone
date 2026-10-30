@@ -80,13 +80,13 @@ export function GetStartedSection({ mode = "light" }: GetStartedSectionProps) {
             )}
           />
           <div className="flex items-center justify-center gap-x-4 mt-8 md:mt-6">
-            <Link href="https://web.steep.app/sign-up">
+            <Link href="https://sealos.run/downloads">
               <SteepButton
                 label={STEEP_COPY.getStarted.cta}
                 variant={mode === "dark" ? "primary-reverse" : "primary"}
               />
             </Link>
-            <Link href="/demo">
+            <Link href="https://sealos.run/downloads">
               <SteepButton
                 variant="tertiary"
                 label={STEEP_COPY.getStarted.ctaSecondary}

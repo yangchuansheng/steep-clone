@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type CSSProperties, type Ref } from "react";
-import Link from "next/link";
 import {
   AnimatedImage,
   CarouselFeatureCard,
@@ -11,14 +10,11 @@ import {
   FeatureImageStack,
   HorizontalTabBar,
   Key36Icon,
-  OsiHex36Icon,
   Section,
-  SectionBadgeLink,
   SnapCarousel,
   SplitHeadingBlock,
   StaggerFeatureGrid,
   STEEP_COPY,
-  SteepButton,
   useInViewTrigger,
   useWindowSize,
   VerticalAccordionTabs,
@@ -66,16 +62,6 @@ export const SEMANTIC_PLATFORM_SECTIONS = [
     smallImage: "/images/model/semantic-code.png",
     bordered: true,
   },
-  {
-    id: "Define in app",
-    label: STEEP_COPY.semanticPlatform.featureDefineInApp.title,
-    artboard: "mobile-small",
-    duration: 7.29,
-    description: STEEP_COPY.semanticPlatform.featureDefineInApp.description,
-    image: "/images/home/model-define-ui.png",
-    smallImage: "/images/model/semantic-ui.png",
-    bordered: true,
-  },
 ];
 
 const SEMANTIC_PLATFORM_FEATURES = [
@@ -100,11 +86,6 @@ const SEMANTIC_PLATFORM_FEATURES = [
         <CubeLogo36Icon className="md:size-9 size-8 shrink-0 hidden lg:block" />
       </>
     ),
-  },
-  {
-    title: STEEP_COPY.semanticPlatform.featureOsiReady.title,
-    description: STEEP_COPY.semanticPlatform.featureOsiReady.description,
-    icon: <OsiHex36Icon />,
   },
 ];
 
@@ -162,7 +143,7 @@ function MobileSemanticPlatformShowcase({
 }
 
 export function SemanticPlatformSection() {
-  const { isSmall, isXLarge, isMedium } = useWindowSize();
+  const { isSmall, isXLarge } = useWindowSize();
   const [activeIndex, setActiveIndex] = useState(0);
   const { triggerRef, isInView } = useInViewTrigger({
     start: isSmall ? "top bottom-=200" : "top bottom-=300",
@@ -177,6 +158,7 @@ export function SemanticPlatformSection() {
 
   return (
     <div
+      id="canvas"
       ref={triggerRef}
       className="relative py-16 md:pt-30 lg:pb-40 bg-[#121212] flex justify-center "
     >
@@ -200,13 +182,6 @@ export function SemanticPlatformSection() {
       <Section className="relative z-10" noPaddingOnSmallScreens={true}>
         <div className="flex flex-col items-start mb-12 lg:mb-20 gap-8">
           <div className="mobile-padding-only">
-            <Link href="/semantic-platform">
-              <SectionBadgeLink
-                text="Semantic platform"
-                variant="dark"
-                className="mb-4"
-              />
-            </Link>
             <div className="flex flex-col items-start">
               <SplitHeadingBlock
                 isInView={isInView}
@@ -214,17 +189,6 @@ export function SemanticPlatformSection() {
                 heading={STEEP_COPY.semanticPlatform.title}
                 description={STEEP_COPY.semanticPlatform.description}
                 descriptionClassName="text-white/60 max-w-2xl"
-                cta={
-                  isMedium && (
-                    <Link href="/semantic-platform">
-                      <SteepButton
-                        variant="secondary-reverse"
-                        label={STEEP_COPY.semanticPlatform.cta}
-                        arrow={true}
-                      />
-                    </Link>
-                  )
-                }
               />
             </div>
           </div>
@@ -282,19 +246,8 @@ export function SemanticPlatformSection() {
           <StaggerFeatureGrid
             items={SEMANTIC_PLATFORM_FEATURES}
             mode="dark"
-            className="text-insets"
+            className="text-insets lg:grid-cols-3"
           />
-          {isSmall && (
-            <div className="mt-12 text-insets">
-              <Link href="/semantic-platform">
-                <SteepButton
-                  variant="secondary-reverse"
-                  label="Semantic platform"
-                  arrow={true}
-                />
-              </Link>
-            </div>
-          )}
         </div>
       </Section>
     </div>
