@@ -20,7 +20,6 @@ import {
   SteepButton,
   useWindowSize,
 } from "./shared";
-import { RotatingHeroWords } from "./product-page";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -187,27 +186,6 @@ const K = { y: 0 };
 const Q = { y: -130 };
 const Y = { opacity: 0, top: 28, left: 300, y: 200 };
 const ee = { opacity: 1, y: 84 };
-
-const HERO_ROTATING_WORDS = [
-  "full-stack code",
-  "Vibe Coding apps",
-  "GitHub repos",
-  "managed DBs",
-  "AI templates",
-  "web decks",
-] as const;
-
-function renderHeroDescription(): React.ReactNode {
-  return (
-    <>
-      <span className="block font-serif text-2xl md:text-[28px] leading-tight text-primary-text mb-1.5">
-        <span>Built for</span>
-        <RotatingHeroWords words={HERO_ROTATING_WORDS} />
-      </span>
-      {STEEP_COPY.hero.description}
-    </>
-  );
-}
 
 function renderHeroTitle(): React.ReactNode {
   const title: React.ReactNode | (() => React.ReactNode) = STEEP_COPY.hero.title;
@@ -419,7 +397,7 @@ export const HeroDesktop = ({ carousel }: { carousel: React.ReactNode }) => {
             centerAligned
             heading={renderHeroTitle()}
             headingClassName="text-center text-[82px]! leading-[1.05] tracking-tight"
-            description={renderHeroDescription()}
+            description={STEEP_COPY.hero.description}
             descriptionClassName="text-center text-primary-text! leading-normal! max-w-[780px]!"
             cta={
               <div className="flex items-center justify-center gap-x-2">
@@ -560,7 +538,7 @@ export const HeroMobile = () => (
         centerAligned
         heading={renderHeroTitle()}
         headingClassName="text-center text-[44px] xs:text-[54px] sm:text-[64px] md:text-[76px] leading-[1.1] tracking-tight "
-        description={renderHeroDescription()}
+        description={STEEP_COPY.hero.description}
         descriptionClassName="text-center text-base! md:text-xl! lg:text-2xl! text-primary-text! leading-normal! px-10"
         cta={
           <div className="flex items-center justify-center gap-x-2 mt-2">

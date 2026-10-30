@@ -13,12 +13,12 @@ import {
   Section,
   SnapCarousel,
   SplitHeadingBlock,
+  StaggerFeatureGrid,
   STEEP_COPY,
   useInViewTrigger,
   useWindowSize,
   VerticalAccordionTabs,
 } from "./shared";
-import { CachingLayerSection } from "./semantic-platform-page";
 
 export const SEMANTIC_PLATFORM_SECTIONS = [
   {
@@ -242,10 +242,10 @@ export function SemanticPlatformSection() {
             </div>
           )}
         </div>
-        <CachingLayerSection
-          title="Visual dependency graph"
-          description="Every web service, worker, database, and bucket connected on one canvas."
-          features={SEMANTIC_PLATFORM_FEATURES}
+        <StaggerFeatureGrid
+          items={SEMANTIC_PLATFORM_FEATURES}
+          mode="dark"
+          className="text-insets lg:grid-cols-3"
         />
       </Section>
     </div>

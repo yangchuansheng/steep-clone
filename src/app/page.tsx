@@ -7,20 +7,16 @@ import {
   HeroMobile,
 } from "@/components/sites/steep/hero-section";
 import { ProductIntroSection } from "@/components/sites/steep/product-intro-section";
+import { AiSection } from "@/components/sites/steep/ai-section";
 import { ProductSection } from "@/components/sites/steep/product-section";
 import { CustomerStorySection } from "@/components/sites/steep/customer-story-section";
 import { SemanticPlatformSection } from "@/components/sites/steep/semantic-platform-section";
 import {
-  AiCapabilitiesSection,
   AiGetStartedSection,
   AiIntroSection,
   SEALOS_CAPABILITIES_TABS,
-  SEALOS_COST_TIER_CARDS,
 } from "@/components/sites/steep/ai-page";
-import {
-  CloudPrimitivesSection,
-  MobileAppBanner,
-} from "@/components/sites/steep/product-page";
+import { CloudPrimitivesSection } from "@/components/sites/steep/product-page";
 import { FaqSection } from "@/components/sites/steep/semantic-platform-page";
 import { SEALOS_FAQ_ITEMS } from "@/components/sites/steep/shared";
 
@@ -88,23 +84,11 @@ export default function Home() {
         tabs={SEALOS_CAPABILITIES_TABS}
       />
       <ProductIntroSection />
-      <AiCapabilitiesSection
-        title="Pay as you go"
-        description="Save 50%+ on compute and 1–3 Ops roles."
-        cards={SEALOS_COST_TIER_CARDS}
-      />
+      <AiSection />
       <CustomerStorySection />
       <SemanticPlatformSection />
       <ProductSection />
       <CloudPrimitivesSection />
-      <MobileAppBanner
-        image="/images/product/mobile-horizontal.jpg"
-        smallImage="/images/product/mobile-vertical.jpg"
-        title="Native desktop workspace"
-        description="Click live web or PPTX elements in the built-in browser to edit via AI chat."
-        cta="Download Sealos"
-        href="https://sealos.run/downloads"
-      />
       <FaqSection />
       <AiGetStartedSection
         heading="Hire your Ops Agent and ship in minutes"

@@ -15,7 +15,6 @@ import {
   CarouselFeatureCard,
   FeatureImageStack,
   HorizontalTabBar,
-  type HorizontalTabBarItem,
   NoiseOverlay,
   Section,
   SnapCarousel,
@@ -26,15 +25,6 @@ import {
 } from "./shared";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const OPS_LOOP_STEPS: readonly HorizontalTabBarItem[] = [
-  { id: "step-1", label: "1. Collect Logs & Metrics" },
-  { id: "step-2", label: "2. Diagnose Root Cause" },
-  { id: "step-3", label: "3. Generate Deploy Plan" },
-  { id: "step-4", label: "4. Zero-Downtime Rollout" },
-  { id: "step-5", label: "5. Verify Static Assets" },
-  { id: "step-6", label: "6. Continuous Health Hints" },
-];
 
 const PRODUCT_SECTIONS = [
   {
@@ -315,19 +305,11 @@ export function ProductSection() {
           <MobileProductShowcase />
         ) : (
           <div className="flex flex-col w-full mt-4">
-            <div className="mb-8">
-              <HorizontalTabBar
-                itemWidth="full"
-                buttonsEnabled={false}
-                items={OPS_LOOP_STEPS}
-                activeIndex={activeIndex}
-                onSelect={handleTabClick}
-              />
-            </div>
             {!isXLarge && (
               <>
                 <HorizontalTabBar
-                  itemWidth={80}
+                  itemWidth="full"
+                  buttonsEnabled={false}
                   items={PRODUCT_SECTIONS}
                   activeIndex={activeIndex}
                   onSelect={handleTabClick}
