@@ -10,12 +10,19 @@ import { ProductIntroSection } from "@/components/sites/steep/product-intro-sect
 import { ProductSection } from "@/components/sites/steep/product-section";
 import { CustomerStorySection } from "@/components/sites/steep/customer-story-section";
 import { SemanticPlatformSection } from "@/components/sites/steep/semantic-platform-section";
-import { AiSection } from "@/components/sites/steep/ai-section";
-import { OpsDayTwoSection } from "@/components/sites/steep/ai-page";
-import { CloudPrimitivesSection } from "@/components/sites/steep/product-page";
+import {
+  AiCapabilitiesSection,
+  AiGetStartedSection,
+  AiIntroSection,
+  SEALOS_CAPABILITIES_TABS,
+  SEALOS_COST_TIER_CARDS,
+} from "@/components/sites/steep/ai-page";
+import {
+  CloudPrimitivesSection,
+  MobileAppBanner,
+} from "@/components/sites/steep/product-page";
 import { FaqSection } from "@/components/sites/steep/semantic-platform-page";
 import { SEALOS_FAQ_ITEMS } from "@/components/sites/steep/shared";
-import { GetStartedSection } from "@/components/sites/steep/get-started-section";
 
 const SOFTWARE_APPLICATION_JSON_LD = {
   "@context": "https://schema.org",
@@ -48,7 +55,7 @@ const FAQ_PAGE_JSON_LD = {
 
 export default function Home() {
   return (
-    <SteepLayout className="relative">
+    <SteepLayout className="relative" footerMode="dark">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -68,15 +75,45 @@ export default function Home() {
       <div className="hidden lg:block">
         <HeroDesktop carousel={<BrandCarousel />} />
       </div>
-      <ProductSection />
+      <AiIntroSection
+        id="capabilities"
+        heading={
+          <>
+            Four everyday
+            <br />
+            workflows
+          </>
+        }
+        description=""
+        tabs={SEALOS_CAPABILITIES_TABS}
+      />
       <ProductIntroSection />
-      <AiSection />
+      <AiCapabilitiesSection
+        title="Pay as you go"
+        description="Save 50%+ on compute and 1–3 Ops roles."
+        cards={SEALOS_COST_TIER_CARDS}
+      />
       <CustomerStorySection />
       <SemanticPlatformSection />
-      <OpsDayTwoSection />
+      <ProductSection />
       <CloudPrimitivesSection />
+      <MobileAppBanner
+        image="/images/product/mobile-horizontal.jpg"
+        smallImage="/images/product/mobile-vertical.jpg"
+        title="Native desktop workspace"
+        description="Click live web or PPTX elements in the built-in browser to edit via AI chat."
+        cta="Download Sealos"
+        href="https://sealos.run/downloads"
+      />
       <FaqSection />
-      <GetStartedSection />
+      <AiGetStartedSection
+        heading="Hire your Ops Agent and ship in minutes"
+        description="Claim your $5 free cloud credit on first login."
+        cta="Download for macOS"
+        ctaHref="https://sealos.run/downloads"
+        ctaSecondary="Download for Windows"
+        ctaSecondaryHref="https://sealos.run/downloads"
+      />
     </SteepLayout>
   );
 }

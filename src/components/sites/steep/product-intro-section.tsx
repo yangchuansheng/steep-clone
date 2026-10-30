@@ -12,6 +12,10 @@ import {
   useInViewTrigger,
   useWindowSize,
 } from "./shared";
+import {
+  SEALOS_NETWORK_BUS_CAPABILITIES,
+  SemanticModelShowcaseCard,
+} from "./semantic-platform-page";
 
 interface ProductIntroIllustrationProps {
   className?: string;
@@ -1257,7 +1261,12 @@ export const ProductIntroSection = () => {
         />
       </Section>
       <Section noPaddingOnSmallScreens className="mb-20">
-        <div className="mt-4 md:mt-24">
+        <div className="mt-4 md:mt-16">
+          <SemanticModelShowcaseCard
+            title="1× Dedicated 24/7 Ops Agent"
+            description="Your natural-language control plane orchestrating containers, databases, buckets, and AI models on one private network."
+            capabilities={SEALOS_NETWORK_BUS_CAPABILITIES}
+          />
           <ProductIntroCards items={PRODUCT_INTRO_ITEMS} />
         </div>
       </Section>

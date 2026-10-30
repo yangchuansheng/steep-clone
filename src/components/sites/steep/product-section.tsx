@@ -15,11 +15,11 @@ import {
   CarouselFeatureCard,
   FeatureImageStack,
   HorizontalTabBar,
+  type HorizontalTabBarItem,
   NoiseOverlay,
   Section,
   SnapCarousel,
   SplitHeadingBlock,
-  STEEP_COPY,
   useInViewTrigger,
   useWindowSize,
   VerticalAccordionTabs,
@@ -27,34 +27,63 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
+const OPS_LOOP_STEPS: readonly HorizontalTabBarItem[] = [
+  { id: "step-1", label: "1. Collect Logs & Metrics" },
+  { id: "step-2", label: "2. Diagnose Root Cause" },
+  { id: "step-3", label: "3. Generate Deploy Plan" },
+  { id: "step-4", label: "4. Zero-Downtime Rollout" },
+  { id: "step-5", label: "5. Verify Static Assets" },
+  { id: "step-6", label: "6. Continuous Health Hints" },
+];
+
 const PRODUCT_SECTIONS = [
   {
     id: "AI",
-    label: STEEP_COPY.productSection.featureAI.title,
+    label: "502 & OOM Diagnostics",
     artboard: "AI",
     duration: 15,
-    description: STEEP_COPY.productSection.featureAI.description,
+    description:
+      "Correlates OOMKilled exit code 137 logs and memory spikes into a one-click memory and connection upgrade card.",
   },
   {
     id: "explore",
-    label: STEEP_COPY.productSection.featureExplore.title,
+    label: "Hot Update & Rollback",
     artboard: "Explore-line",
     duration: 12,
-    description: STEEP_COPY.productSection.featureExplore.description,
+    description:
+      "Builds incremental images, verifies 200 OK across static assets, and rolls back in one click.",
   },
   {
     id: "reports",
-    label: STEEP_COPY.productSection.featureReports.title,
+    label: "DB Scaling & Local Tunnel",
     artboard: "Reports",
     duration: 17,
-    description: STEEP_COPY.productSection.featureReports.description,
+    description:
+      "Expands volume storage online and opens an encrypted 127.0.0.1:15432 tunnel for local database tools.",
+  },
+  {
+    id: "drilldown",
+    label: "Config Mount & Batch Env",
+    artboard: "Drill-down",
+    duration: 13.16,
+    description:
+      "Mounts container config files like /etc/nginx/nginx.conf and parses batch environment variables.",
+  },
+  {
+    id: "targets",
+    label: "AI Gateway Tracing",
+    artboard: "Targets",
+    duration: 8,
+    description:
+      "Tracks 16-char Request IDs, TTFT latency, and model spend while rotating OpenAI or Anthropic keys.",
   },
   {
     id: "maps",
-    label: STEEP_COPY.productSection.featureMaps.title,
+    label: "7 Service Health Hints",
     artboard: "Maps",
     duration: 6.14,
-    description: STEEP_COPY.productSection.featureMaps.description,
+    description:
+      "Surfaces runtime hints for active deploys, unhealthy replicas, restarts, memory limits, and backups.",
   },
 ];
 
@@ -114,16 +143,16 @@ function LazyRiveViewportWrapper({
 
 const STACKED_MOBILE_FEATURES = [
   {
-    title: STEEP_COPY.productSection.featureAI.title,
-    description: STEEP_COPY.productSection.featureAI.description,
+    title: PRODUCT_SECTIONS[0].label,
+    description: PRODUCT_SECTIONS[0].description,
     image: "/images/home/product-mobile-medium.png",
     smallImage: "/images/home/product-mobile-square.png",
     shadow: false,
     border: false,
   },
   {
-    title: STEEP_COPY.productSection.featureExplore.title,
-    description: STEEP_COPY.productSection.featureExplore.description,
+    title: PRODUCT_SECTIONS[1].label,
+    description: PRODUCT_SECTIONS[1].description,
     image: "/images/home/product-explore-medium.png",
     smallImage: "/images/home/product-explore-square.png",
     shadow: false,
@@ -133,14 +162,26 @@ const STACKED_MOBILE_FEATURES = [
 
 const CAROUSEL_MOBILE_FEATURES = [
   {
-    title: STEEP_COPY.productSection.featureReports.title,
-    description: STEEP_COPY.productSection.featureReports.description,
+    title: PRODUCT_SECTIONS[2].label,
+    description: PRODUCT_SECTIONS[2].description,
     image: "/images/home/product-reports-square.png",
     border: true,
   },
   {
-    title: STEEP_COPY.productSection.featureMaps.title,
-    description: STEEP_COPY.productSection.featureMaps.description,
+    title: PRODUCT_SECTIONS[3].label,
+    description: PRODUCT_SECTIONS[3].description,
+    image: "/images/home/product-drilldown-square.png",
+    border: true,
+  },
+  {
+    title: PRODUCT_SECTIONS[4].label,
+    description: PRODUCT_SECTIONS[4].description,
+    image: "/images/home/product-targets-square.png",
+    border: true,
+  },
+  {
+    title: PRODUCT_SECTIONS[5].label,
+    description: PRODUCT_SECTIONS[5].description,
     image: "/images/home/product-maps-square.png",
     border: false,
   },
@@ -234,7 +275,7 @@ export function ProductSection() {
 
   return (
     <div
-      id="capabilities"
+      id="ops"
       ref={triggerRef}
       className="py-12 md:pt-20 relative md:pb-32 flex overflow-hidden"
       style={{ background: "#FAFAFB" }}
@@ -258,8 +299,14 @@ export function ProductSection() {
               isInView={isInView}
               className="text-left mb-16 max-w-[480px] md:max-w-none"
               headingClassName="font-serif text-5xl xs:text-6xl lg:text-7xl"
-              heading={STEEP_COPY.productSection.title}
-              description={STEEP_COPY.productSection.description}
+              heading={
+                <>
+                  Autonomous Day-2
+                  <br />
+                  operations
+                </>
+              }
+              description=""
               descriptionClassName="md:max-w-lg max-w-md "
             />
           </div>
@@ -268,6 +315,15 @@ export function ProductSection() {
           <MobileProductShowcase />
         ) : (
           <div className="flex flex-col w-full mt-4">
+            <div className="mb-8">
+              <HorizontalTabBar
+                itemWidth="full"
+                buttonsEnabled={false}
+                items={OPS_LOOP_STEPS}
+                activeIndex={activeIndex}
+                onSelect={handleTabClick}
+              />
+            </div>
             {!isXLarge && (
               <>
                 <HorizontalTabBar

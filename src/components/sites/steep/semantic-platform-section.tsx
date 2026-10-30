@@ -13,12 +13,12 @@ import {
   Section,
   SnapCarousel,
   SplitHeadingBlock,
-  StaggerFeatureGrid,
   STEEP_COPY,
   useInViewTrigger,
   useWindowSize,
   VerticalAccordionTabs,
 } from "./shared";
+import { CachingLayerSection } from "./semantic-platform-page";
 
 export const SEMANTIC_PLATFORM_SECTIONS = [
   {
@@ -67,24 +67,24 @@ export const SEMANTIC_PLATFORM_SECTIONS = [
 const SEMANTIC_PLATFORM_FEATURES = [
   {
     title: STEEP_COPY.semanticPlatform.featureFineGrainedPermissions.title,
-    icon: <Key36Icon />,
+    icon: <Key36Icon className="text-white fill-white shrink-0" />,
     description:
       STEEP_COPY.semanticPlatform.featureFineGrainedPermissions.description,
   },
   {
     title: STEEP_COPY.semanticPlatform.featureSmartCaching.title,
     description: STEEP_COPY.semanticPlatform.featureSmartCaching.description,
-    icon: <ClockRefresh36Icon />,
+    icon: <ClockRefresh36Icon className="text-white fill-white shrink-0" />,
   },
   {
     title: STEEP_COPY.semanticPlatform.featureDbtCubeIntegrations.title,
     description:
       STEEP_COPY.semanticPlatform.featureDbtCubeIntegrations.description,
     icon: (
-      <>
+      <div className="flex items-center gap-2 text-white fill-white shrink-0">
         <DbtLogo36Icon className="md:size-9 size-8 shrink-0" />
         <CubeLogo36Icon className="md:size-9 size-8 shrink-0 hidden lg:block" />
-      </>
+      </div>
     ),
   },
 ];
@@ -242,13 +242,11 @@ export function SemanticPlatformSection() {
             </div>
           )}
         </div>
-        <div className="mobile-padding-only">
-          <StaggerFeatureGrid
-            items={SEMANTIC_PLATFORM_FEATURES}
-            mode="dark"
-            className="text-insets lg:grid-cols-3"
-          />
-        </div>
+        <CachingLayerSection
+          title="Visual dependency graph"
+          description="Every web service, worker, database, and bucket connected on one canvas."
+          features={SEMANTIC_PLATFORM_FEATURES}
+        />
       </Section>
     </div>
   );

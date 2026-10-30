@@ -268,12 +268,12 @@ const PRODUCT_COPY = {
   hero: {
     title: "Built for",
     titleRotatingWords: [
-      "commercial",
-      "operations",
-      "product",
-      "marketing",
-      "finance",
-      "everyone",
+      "full-stack code",
+      "Vibe Coding apps",
+      "GitHub repos",
+      "managed DBs",
+      "AI templates",
+      "web decks",
     ],
     description: (
       <>
@@ -963,14 +963,28 @@ function getMarbleResponsiveSettings(width: number): MarbleShaderSettings {
   };
 }
 
-function RotatingHeroWords() {
+export interface RotatingHeroWordsProps {
+  words?: readonly string[];
+  className?: string;
+}
+
+export function RotatingHeroWords({
+  words = PRODUCT_COPY.hero.titleRotatingWords,
+  className,
+}: RotatingHeroWordsProps = {}) {
   const containerRef = useRef<HTMLSpanElement>(null);
   const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const splitsRef = useRef<SplitText[]>([]);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
+  const longestWord = words.reduce(
+    (longest, current) =>
+      current.length >= longest.length ? current : longest,
+    "abcdefghijkl",
+  );
 
   useEffect(() => {
     const container = containerRef.current;
+    wordRefs.current = wordRefs.current.slice(0, words.length);
     const elements = wordRefs.current.filter(
       (el): el is HTMLSpanElement => el !== null,
     );
@@ -1032,12 +1046,15 @@ function RotatingHeroWords() {
       splitsRef.current = [];
       timelineRef.current = null;
     };
-  }, []);
+  }, [words]);
 
   return (
     <span
       ref={containerRef}
-      className="inline-block overflow-hidden align-bottom pb-[0.1em] translate-y-[0.1em] relative -ml-2.5 xs:ml-0"
+      className={clsx(
+        "inline-block overflow-hidden align-bottom pb-[0.1em] translate-y-[0.1em] relative -ml-2.5 xs:ml-0",
+        className,
+      )}
       style={{
         fontKerning: "none",
         WebkitFontSmoothing: "antialiased",
@@ -1045,18 +1062,18 @@ function RotatingHeroWords() {
       }}
     >
       <span
-        className="invisible italic pl-[0.15em] pr-[0.1em]"
+        className="invisible italic pl-[0.15em] pr-[0.1em] whitespace-nowrap"
         aria-hidden={true}
       >
-        abcdefghijkl
+        {longestWord}
       </span>
-      {PRODUCT_COPY.hero.titleRotatingWords.map((word, idx) => (
+      {words.map((word, idx) => (
         <span
           key={word}
           ref={(el) => {
             if (el) wordRefs.current[idx] = el;
           }}
-          className="absolute inset-y-0 left-[0.25em]  inline-block italic text-left"
+          className="absolute inset-y-0 left-[0.25em] inline-block italic text-left whitespace-nowrap"
         >
           {word}
         </span>
@@ -1304,21 +1321,23 @@ function ScaleInViewBanner({
   );
 }
 
-interface MobileAppBannerProps {
+export interface MobileAppBannerProps {
   image: string;
   smallImage: string;
   cta: string;
   title: string;
   description: string;
+  href?: string;
   bgColor?: string;
 }
 
-function MobileAppBanner({
+export function MobileAppBanner({
   image,
   smallImage,
   cta,
   title,
   description,
+  href = "/download",
   bgColor = "bg-[#EFEFEF]/60",
 }: MobileAppBannerProps) {
   return (
@@ -1349,7 +1368,7 @@ function MobileAppBanner({
             {description}
           </p>
           <div className=" mt-4">
-            <Link href="/download">
+            <Link href={href}>
               <SteepButton
                 label={cta}
                 variant="secondary"

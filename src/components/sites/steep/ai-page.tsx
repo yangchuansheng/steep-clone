@@ -1448,6 +1448,49 @@ export interface AiIntroTabItem {
   smallImage?: string;
 }
 
+export const SEALOS_CAPABILITIES_TABS: readonly AiIntroTabItem[] = [
+  {
+    id: "workflow-local-code",
+    label: "Local Code & Web",
+    artboard: "workflow-local-code",
+    duration: 8,
+    description:
+      "Ship local folders, Vibe Coding projects, and interactive HTML decks with instant HTTPS links.",
+    image: "/images/ai/carousel-1-large.png",
+    smallImage: "/images/ai/carousel-1-small.png",
+  },
+  {
+    id: "workflow-github-db",
+    label: "GitHub & Databases",
+    artboard: "workflow-github-db",
+    duration: 8,
+    description:
+      "Connect repositories, detect branches and ports, and wire PostgreSQL automatically.",
+    image: "/images/ai/carousel-2-large.png",
+    smallImage: "/images/ai/carousel-2-small.png",
+  },
+  {
+    id: "workflow-templates",
+    label: "Template Auto-Fill",
+    artboard: "workflow-templates",
+    duration: 8,
+    description:
+      "Launch n8n, Dify, New API, and WordPress with one-click credential and secret generation.",
+    image: "/images/ai/carousel-3-large.png",
+    smallImage: "/images/ai/carousel-3-small.png",
+  },
+  {
+    id: "workflow-canvas-gateway",
+    label: "Canvas & AI Gateway",
+    artboard: "workflow-canvas-gateway",
+    duration: 8,
+    description:
+      "Expand any project canvas with replicated databases, Docker images, and OpenAI or Anthropic routing.",
+    image: "/images/home/model-define-ui.png",
+    smallImage: "/images/model/semantic-ui.png",
+  },
+];
+
 export const SEALOS_OPS_TABS: readonly AiIntroTabItem[] = [
   {
     id: "ops-oom",
@@ -1784,7 +1827,41 @@ const CAPABILITIES_CARDS: readonly ThreeCardItemData[] = [
   },
 ];
 
-function AiCapabilitiesSection() {
+export const SEALOS_COST_TIER_CARDS: readonly ThreeCardItemData[] = [
+  {
+    title: "1 vCPU 2 GB · $5/mo",
+    image: "/images/ai/trust-semantic-model.png",
+    description:
+      "Starter tier for side projects and web decks, covered in week one by your $5 welcome credit.",
+    bordered: true,
+  },
+  {
+    title: "4 vCPU 16 GB · $36/mo",
+    image: "/images/ai/trust-reasoning.png",
+    description:
+      "Production tier vs $70–$100/mo on stitched clouds. Save 50%+ on compute and 1–3 Ops roles.",
+    bordered: true,
+  },
+  {
+    title: "8 vCPU 32 GB · $72/mo",
+    image: "/images/ai/trust-questions.png",
+    description:
+      "High-concurrency SaaS cluster with sub-millisecond private networking and zero internal traffic fees.",
+    bordered: true,
+  },
+];
+
+export interface AiCapabilitiesSectionProps {
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  cards?: readonly ThreeCardItemData[];
+}
+
+export function AiCapabilitiesSection({
+  title = AI_COPY.capabilitiesSection.title,
+  description = AI_COPY.capabilitiesSection.description,
+  cards = CAPABILITIES_CARDS,
+}: AiCapabilitiesSectionProps = {}) {
   const { isSmall } = useWindowSize();
   const { triggerRef } = useInViewTrigger({
     start: isSmall ? "top bottom-=200" : "top bottom-=300",
@@ -1802,10 +1879,10 @@ function AiCapabilitiesSection() {
             className="flex-col flex pr-4 md:pr-8 lg:mr-20 pb-20 md:pb-0 md:w-[360px]"
           >
             <p className="text-6xl font-medium leading-none mb-3 text-insets font-serif">
-              {AI_COPY.capabilitiesSection.title}
+              {title}
             </p>
             <p className="text-primary-text/60 text-lg md:text-xl text-md font-normal leading-tight text-insets">
-              {AI_COPY.capabilitiesSection.description}
+              {description}
             </p>
           </div>
           <div className="md:max-w-[360px] xl:max-w-[462px]">
@@ -1823,7 +1900,7 @@ function AiCapabilitiesSection() {
         noPaddingOnSmallScreens={true}
         className="gap-8 md:gap-20 flex flex-col mb-16 md:mb-40"
       >
-        <ThreeCardRow items={CAPABILITIES_CARDS} />
+        <ThreeCardRow items={cards} />
       </Section>
     </>
   );
@@ -2054,7 +2131,23 @@ function AiSafeguardSection() {
   );
 }
 
-function AiGetStartedSection() {
+export interface AiGetStartedSectionProps {
+  heading?: React.ReactNode;
+  description?: React.ReactNode;
+  cta?: string;
+  ctaHref?: string;
+  ctaSecondary?: string;
+  ctaSecondaryHref?: string;
+}
+
+export function AiGetStartedSection({
+  heading = AI_COPY.getStartedSection.title,
+  description = AI_COPY.getStartedSection.description,
+  cta = AI_COPY.getStartedSection.cta,
+  ctaHref = "https://web.steep.app/sign-up",
+  ctaSecondary = AI_COPY.getStartedSection.ctaSecondary,
+  ctaSecondaryHref = "/contact",
+}: AiGetStartedSectionProps = {}) {
   const { isSmall } = useWindowSize();
   const { triggerRef, isInView } = useInViewTrigger({
     start: isSmall ? "top bottom-=300" : "top bottom-=400",
@@ -2075,28 +2168,28 @@ function AiGetStartedSection() {
           <div className="flex flex-col items-center lg:items-start justify-center">
             <SplitHeadingBlock
               isInView={isInView}
-              heading={AI_COPY.getStartedSection.title}
+              heading={heading}
               headingClassName={clsx(
                 "text-center lg:text-left text-[36px]! sm:text-[42px]! md:text-[50px]! xl:text-[64px]!",
                 "text-white",
               )}
-              description={AI_COPY.getStartedSection.description}
+              description={description}
               descriptionClassName={clsx(
                 "text-center lg:text-left max-w-3xl text-base! md:text-lg! max-w-[480px]!",
                 "text-white/50",
               )}
             />
             <div className="flex items-center justify-center gap-x-4 mt-8 md:mt-6">
-              <Link href="https://web.steep.app/sign-up">
+              <Link href={ctaHref}>
                 <SteepButton
-                  label={AI_COPY.getStartedSection.cta}
+                  label={cta}
                   variant="primary-reverse"
                 />
               </Link>
-              <Link href="/contact">
+              <Link href={ctaSecondaryHref}>
                 <SteepButton
                   variant="tertiary"
-                  label={AI_COPY.getStartedSection.ctaSecondary}
+                  label={ctaSecondary}
                   arrow={true}
                   textColor="text-white"
                 />
