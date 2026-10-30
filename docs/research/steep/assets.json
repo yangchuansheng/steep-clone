@@ -1,0 +1,836 @@
+[
+  {
+    "relPath": "/_next/static/media/sohne-vf.b7215353.woff2",
+    "localPath": "/fonts/sohne-vf.b7215353.woff2",
+    "status": 200,
+    "size": 67454
+  },
+  {
+    "relPath": "/_next/static/media/sohne-vf-kursiv.2be2eb33.woff2",
+    "localPath": "/fonts/sohne-vf-kursiv.2be2eb33.woff2",
+    "status": 200,
+    "size": 70774
+  },
+  {
+    "relPath": "/_next/static/media/soehne-buch.aa76bb7b.woff2",
+    "localPath": "/fonts/soehne-buch.aa76bb7b.woff2",
+    "status": 200,
+    "size": 33326
+  },
+  {
+    "relPath": "/_next/static/media/soehne-kraftig.d1166ba7.woff2",
+    "localPath": "/fonts/soehne-kraftig.d1166ba7.woff2",
+    "status": 200,
+    "size": 35682
+  },
+  {
+    "relPath": "/_next/static/media/signifier-regular.f38fd10d.woff2",
+    "localPath": "/fonts/signifier-regular.f38fd10d.woff2",
+    "status": 200,
+    "size": 55407
+  },
+  {
+    "relPath": "/_next/static/media/signifier-regular-italic.6293c227.woff2",
+    "localPath": "/fonts/signifier-regular-italic.6293c227.woff2",
+    "status": 200,
+    "size": 59268
+  },
+  {
+    "relPath": "/fonts/SohneVF-Roman.ttf",
+    "localPath": "/fonts/SohneVF-Roman.ttf",
+    "status": 200,
+    "size": 198508
+  },
+  {
+    "relPath": "/animations/global-animations.riv",
+    "localPath": "/animations/global-animations.riv",
+    "status": 200,
+    "size": 3315107
+  },
+  {
+    "relPath": "/animations/assets/Avatar.png",
+    "localPath": "/animations/assets/Avatar.png",
+    "status": 200,
+    "size": 41232
+  },
+  {
+    "relPath": "/animations/assets/map-hexagons-level4-min.png",
+    "localPath": "/animations/assets/map-hexagons-level4-min.png",
+    "status": 200,
+    "size": 291053
+  },
+  {
+    "relPath": "/animations/assets/map-hexagons-level3-min.png",
+    "localPath": "/animations/assets/map-hexagons-level3-min.png",
+    "status": 200,
+    "size": 139435
+  },
+  {
+    "relPath": "/animations/assets/map-empty-level2-min.png",
+    "localPath": "/animations/assets/map-empty-level2-min.png",
+    "status": 200,
+    "size": 127950
+  },
+  {
+    "relPath": "/animations/assets/map-empty-level1-min.png",
+    "localPath": "/animations/assets/map-empty-level1-min.png",
+    "status": 200,
+    "size": 63868
+  },
+  {
+    "relPath": "/animations/assets/screenshot-report-fill.png",
+    "localPath": "/animations/assets/screenshot-report-fill.png",
+    "status": 200,
+    "size": 57849
+  },
+  {
+    "relPath": "/videos/door.mp4",
+    "localPath": "/videos/door.mp4",
+    "status": 200,
+    "size": 1748542
+  },
+  {
+    "relPath": "/images/backgrounds/bg-home.jpg",
+    "localPath": "/images/backgrounds/bg-home.jpg",
+    "status": 200,
+    "size": 101430
+  },
+  {
+    "relPath": "/images/backgrounds/bg-home-square.jpg",
+    "localPath": "/images/backgrounds/bg-home-square.jpg",
+    "status": 200,
+    "size": 90000
+  },
+  {
+    "relPath": "/images/backgrounds/bg-home-showcase.jpg",
+    "localPath": "/images/backgrounds/bg-home-showcase.jpg",
+    "status": 200,
+    "size": 56458
+  },
+  {
+    "relPath": "/images/home-site-25/hero-desktop-clean.png",
+    "localPath": "/images/home-site-25/hero-desktop-clean.png",
+    "status": 200,
+    "size": 28188
+  },
+  {
+    "relPath": "/images/home-site-25/home-content-start.png",
+    "localPath": "/images/home-site-25/home-content-start.png",
+    "status": 200,
+    "size": 24415
+  },
+  {
+    "relPath": "/images/home-site-25/home-content.png",
+    "localPath": "/images/home-site-25/home-content.png",
+    "status": 200,
+    "size": 74034
+  },
+  {
+    "relPath": "/images/home-site-25/hero-medium.png",
+    "localPath": "/images/home-site-25/hero-medium.png",
+    "status": 200,
+    "size": 100855
+  },
+  {
+    "relPath": "/images/home-site-25/hero-mobile.png",
+    "localPath": "/images/home-site-25/hero-mobile.png",
+    "status": 200,
+    "size": 44786
+  },
+  {
+    "relPath": "/images/home/hero-pink-block.svg",
+    "localPath": "/images/home/hero-pink-block.svg",
+    "status": 200,
+    "size": 36609
+  },
+  {
+    "relPath": "/images/home/hero-blue-block.svg",
+    "localPath": "/images/home/hero-blue-block.svg",
+    "status": 200,
+    "size": 81002
+  },
+  {
+    "relPath": "/images/home/hero-gray-block.svg",
+    "localPath": "/images/home/hero-gray-block.svg",
+    "status": 200,
+    "size": 36432
+  },
+  {
+    "relPath": "/images/home/hero-cursor-left.svg",
+    "localPath": "/images/home/hero-cursor-left.svg",
+    "status": 200,
+    "size": 3519
+  },
+  {
+    "relPath": "/images/home/hero-cursor-right.svg",
+    "localPath": "/images/home/hero-cursor-right.svg",
+    "status": 200,
+    "size": 3421
+  },
+  {
+    "relPath": "/images/customers/logos/voi.svg",
+    "localPath": "/images/customers/logos/voi.svg",
+    "status": 200,
+    "size": 2000
+  },
+  {
+    "relPath": "/images/customers/logos/framer.svg",
+    "localPath": "/images/customers/logos/framer.svg",
+    "status": 200,
+    "size": 5538
+  },
+  {
+    "relPath": "/images/customers/logos/veo.svg",
+    "localPath": "/images/customers/logos/veo.svg",
+    "status": 200,
+    "size": 1775
+  },
+  {
+    "relPath": "/images/customers/logos/geoguessr.svg",
+    "localPath": "/images/customers/logos/geoguessr.svg",
+    "status": 200,
+    "size": 11903
+  },
+  {
+    "relPath": "/images/customers/logos/monta.svg",
+    "localPath": "/images/customers/logos/monta.svg",
+    "status": 200,
+    "size": 2999
+  },
+  {
+    "relPath": "/images/customers/logos/bounce.svg",
+    "localPath": "/images/customers/logos/bounce.svg",
+    "status": 200,
+    "size": 7774
+  },
+  {
+    "relPath": "/images/customers/logos/wunderflats.svg",
+    "localPath": "/images/customers/logos/wunderflats.svg",
+    "status": 200,
+    "size": 2662
+  },
+  {
+    "relPath": "/images/customers/logos/hairburst.svg",
+    "localPath": "/images/customers/logos/hairburst.svg",
+    "status": 200,
+    "size": 4723
+  },
+  {
+    "relPath": "/images/customers/logos/alloy.svg",
+    "localPath": "/images/customers/logos/alloy.svg",
+    "status": 200,
+    "size": 2571
+  },
+  {
+    "relPath": "/images/customers/logos/lumiq.svg",
+    "localPath": "/images/customers/logos/lumiq.svg",
+    "status": 200,
+    "size": 17538
+  },
+  {
+    "relPath": "/images/customers/logos/juni.svg",
+    "localPath": "/images/customers/logos/juni.svg",
+    "status": 200,
+    "size": 1107
+  },
+  {
+    "relPath": "/images/customers/logos/instabox.svg",
+    "localPath": "/images/customers/logos/instabox.svg",
+    "status": 200,
+    "size": 3351
+  },
+  {
+    "relPath": "/images/customers/logos/cabonline.svg",
+    "localPath": "/images/customers/logos/cabonline.svg",
+    "status": 200,
+    "size": 5992
+  },
+  {
+    "relPath": "/images/customers/logos/onceupon.svg",
+    "localPath": "/images/customers/logos/onceupon.svg",
+    "status": 200,
+    "size": 9436
+  },
+  {
+    "relPath": "/images/customers/logos/budbee.svg",
+    "localPath": "/images/customers/logos/budbee.svg",
+    "status": 200,
+    "size": 3380
+  },
+  {
+    "relPath": "/images/customers/logos/goals.svg",
+    "localPath": "/images/customers/logos/goals.svg",
+    "status": 200,
+    "size": 958
+  },
+  {
+    "relPath": "/images/customers/logos/philadelphia.svg",
+    "localPath": "/images/customers/logos/philadelphia.svg",
+    "status": 200,
+    "size": 19048
+  },
+  {
+    "relPath": "/images/home/usp-1.svg",
+    "localPath": "/images/home/usp-1.svg",
+    "status": 200,
+    "size": 6211
+  },
+  {
+    "relPath": "/images/home/usp-2.svg",
+    "localPath": "/images/home/usp-2.svg",
+    "status": 200,
+    "size": 15850
+  },
+  {
+    "relPath": "/images/home/usp-3.svg",
+    "localPath": "/images/home/usp-3.svg",
+    "status": 200,
+    "size": 5083
+  },
+  {
+    "relPath": "/images/home/product-explore-medium.png",
+    "localPath": "/images/home/product-explore-medium.png",
+    "status": 200,
+    "size": 57763
+  },
+  {
+    "relPath": "/images/home/product-explore-square.png",
+    "localPath": "/images/home/product-explore-square.png",
+    "status": 200,
+    "size": 38592
+  },
+  {
+    "relPath": "/images/product/hero-report.png",
+    "localPath": "/images/product/hero-report.png",
+    "status": 200,
+    "size": 51920
+  },
+  {
+    "relPath": "/images/home/product-reports-square.png",
+    "localPath": "/images/home/product-reports-square.png",
+    "status": 200,
+    "size": 18416
+  },
+  {
+    "relPath": "/images/home/product-mobile-medium.png",
+    "localPath": "/images/home/product-mobile-medium.png",
+    "status": 200,
+    "size": 40816
+  },
+  {
+    "relPath": "/images/home/product-mobile-square.png",
+    "localPath": "/images/home/product-mobile-square.png",
+    "status": 200,
+    "size": 31927
+  },
+  {
+    "relPath": "/images/home/product-drilldown-square.png",
+    "localPath": "/images/home/product-drilldown-square.png",
+    "status": 200,
+    "size": 34927
+  },
+  {
+    "relPath": "/images/home/product-targets-square.png",
+    "localPath": "/images/home/product-targets-square.png",
+    "status": 200,
+    "size": 26687
+  },
+  {
+    "relPath": "/images/home/product-maps-square.png",
+    "localPath": "/images/home/product-maps-square.png",
+    "status": 200,
+    "size": 327790
+  },
+  {
+    "relPath": "/images/home/customers-voi.jpg",
+    "localPath": "/images/home/customers-voi.jpg",
+    "status": 200,
+    "size": 68938
+  },
+  {
+    "relPath": "/images/home/customers-juni.jpg",
+    "localPath": "/images/home/customers-juni.jpg",
+    "status": 200,
+    "size": 55217
+  },
+  {
+    "relPath": "/images/home/customers-bounce.jpg",
+    "localPath": "/images/home/customers-bounce.jpg",
+    "status": 200,
+    "size": 53655
+  },
+  {
+    "relPath": "/images/home/customers-onceupon.jpg",
+    "localPath": "/images/home/customers-onceupon.jpg",
+    "status": 200,
+    "size": 80483
+  },
+  {
+    "relPath": "/images/home/model-start.jpg",
+    "localPath": "/images/home/model-start.jpg",
+    "status": 200,
+    "size": 71998
+  },
+  {
+    "relPath": "/images/model/semantic-hero-ill.png",
+    "localPath": "/images/model/semantic-hero-ill.png",
+    "status": 200,
+    "size": 86846
+  },
+  {
+    "relPath": "/images/home/model-api.jpg",
+    "localPath": "/images/home/model-api.jpg",
+    "status": 200,
+    "size": 130884
+  },
+  {
+    "relPath": "/images/home/model-api-square.jpg",
+    "localPath": "/images/home/model-api-square.jpg",
+    "status": 200,
+    "size": 59639
+  },
+  {
+    "relPath": "/images/home/model-metric-catalog.png",
+    "localPath": "/images/home/model-metric-catalog.png",
+    "status": 200,
+    "size": 112751
+  },
+  {
+    "relPath": "/images/home/model-catalog-square.png",
+    "localPath": "/images/home/model-catalog-square.png",
+    "status": 200,
+    "size": 43199
+  },
+  {
+    "relPath": "/images/home/model-code.png",
+    "localPath": "/images/home/model-code.png",
+    "status": 200,
+    "size": 282895
+  },
+  {
+    "relPath": "/images/model/semantic-code.png",
+    "localPath": "/images/model/semantic-code.png",
+    "status": 200,
+    "size": 18630
+  },
+  {
+    "relPath": "/images/home/model-define-ui.png",
+    "localPath": "/images/home/model-define-ui.png",
+    "status": 200,
+    "size": 225594
+  },
+  {
+    "relPath": "/images/model/semantic-ui.png",
+    "localPath": "/images/model/semantic-ui.png",
+    "status": 200,
+    "size": 29366
+  },
+  {
+    "relPath": "/images/ai/bg-ai-section.jpg",
+    "localPath": "/images/ai/bg-ai-section.jpg",
+    "status": 200,
+    "size": 14904
+  },
+  {
+    "relPath": "/images/ai/hero-medium-long.png",
+    "localPath": "/images/ai/hero-medium-long.png",
+    "status": 200,
+    "size": 56302
+  },
+  {
+    "relPath": "/images/ai/face-1.jpg",
+    "localPath": "/images/ai/face-1.jpg",
+    "status": 200,
+    "size": 6684
+  },
+  {
+    "relPath": "/images/ai/face-2.jpg",
+    "localPath": "/images/ai/face-2.jpg",
+    "status": 200,
+    "size": 4571
+  },
+  {
+    "relPath": "/images/ai/face-3.jpg",
+    "localPath": "/images/ai/face-3.jpg",
+    "status": 200,
+    "size": 4442
+  },
+  {
+    "relPath": "/images/ai/trust.png",
+    "localPath": "/images/ai/trust.png",
+    "status": 200,
+    "size": 24428
+  },
+  {
+    "relPath": "/images/ai/generate-reports.png",
+    "localPath": "/images/ai/generate-reports.png",
+    "status": 200,
+    "size": 51585
+  },
+  {
+    "relPath": "/images/ai/workflows.png",
+    "localPath": "/images/ai/workflows.png",
+    "status": 200,
+    "size": 46088
+  },
+  {
+    "relPath": "/images/model/get-started.png",
+    "localPath": "/images/model/get-started.png",
+    "status": 200,
+    "size": 57813
+  },
+  {
+    "relPath": "/images/model/get-started-light-fallback.png",
+    "localPath": "/images/model/get-started-light-fallback.png",
+    "status": 200,
+    "size": 43310
+  },
+  {
+    "relPath": "/images/download/download-apps-banner.png",
+    "localPath": "/images/download/download-apps-banner.png",
+    "status": 200,
+    "size": 35593
+  },
+  {
+    "relPath": "/images/blog/metrics-onion/metrics-onion-hero.webp",
+    "localPath": "/images/blog/metrics-onion/metrics-onion-hero.webp",
+    "status": 200,
+    "size": 198176
+  },
+  {
+    "relPath": "/images/customers/instabee/hero.jpg",
+    "localPath": "/images/customers/instabee/hero.jpg",
+    "status": 200,
+    "size": 235890
+  },
+  {
+    "relPath": "/images/customers/voi/hero.jpg",
+    "localPath": "/images/customers/voi/hero.jpg",
+    "status": 200,
+    "size": 174579
+  },
+  {
+    "relPath": "/images/customers/cdon/hero.jpg",
+    "localPath": "/images/customers/cdon/hero.jpg",
+    "status": 200,
+    "size": 185835
+  },
+  {
+    "relPath": "/images/og/home.png",
+    "localPath": "/images/og/home.png",
+    "status": 200,
+    "size": 388971
+  },
+  {
+    "relPath": "/favicon.ico",
+    "localPath": "/favicon.ico",
+    "status": 200,
+    "size": 15406
+  },
+  {
+    "relPath": "/images/product/entities-drilldown.png",
+    "localPath": "/images/product/entities-drilldown.png",
+    "status": 200,
+    "size": 104840
+  },
+  {
+    "relPath": "/images/product/entities-export.png",
+    "localPath": "/images/product/entities-export.png",
+    "status": 200,
+    "size": 101468
+  },
+  {
+    "relPath": "/images/product/entities-hero.png",
+    "localPath": "/images/product/entities-hero.png",
+    "status": 200,
+    "size": 302561
+  },
+  {
+    "relPath": "/images/product/entities-links.png",
+    "localPath": "/images/product/entities-links.png",
+    "status": 200,
+    "size": 87592
+  },
+  {
+    "relPath": "/images/product/explore-breakdowns.png",
+    "localPath": "/images/product/explore-breakdowns.png",
+    "status": 200,
+    "size": 393923
+  },
+  {
+    "relPath": "/images/product/explore-compare.png",
+    "localPath": "/images/product/explore-compare.png",
+    "status": 200,
+    "size": 323058
+  },
+  {
+    "relPath": "/images/product/explore-trust.png",
+    "localPath": "/images/product/explore-trust.png",
+    "status": 200,
+    "size": 441188
+  },
+  {
+    "relPath": "/images/product/explore.png",
+    "localPath": "/images/product/explore.png",
+    "status": 200,
+    "size": 422091
+  },
+  {
+    "relPath": "/images/product/hero-report-large.png",
+    "localPath": "/images/product/hero-report-large.png",
+    "status": 200,
+    "size": 52407
+  },
+  {
+    "relPath": "/images/product/maps-blue.png",
+    "localPath": "/images/product/maps-blue.png",
+    "status": 200,
+    "size": 315841
+  },
+  {
+    "relPath": "/images/product/maps-red.png",
+    "localPath": "/images/product/maps-red.png",
+    "status": 200,
+    "size": 145457
+  },
+  {
+    "relPath": "/images/product/maps-satellite.jpg",
+    "localPath": "/images/product/maps-satellite.jpg",
+    "status": 200,
+    "size": 194463
+  },
+  {
+    "relPath": "/images/product/mobile-horizontal.jpg",
+    "localPath": "/images/product/mobile-horizontal.jpg",
+    "status": 200,
+    "size": 95060
+  },
+  {
+    "relPath": "/images/product/mobile-vertical.jpg",
+    "localPath": "/images/product/mobile-vertical.jpg",
+    "status": 200,
+    "size": 69121
+  },
+  {
+    "relPath": "/images/product/reports-building-blocks.png",
+    "localPath": "/images/product/reports-building-blocks.png",
+    "status": 200,
+    "size": 17422
+  },
+  {
+    "relPath": "/images/product/reports-filters.png",
+    "localPath": "/images/product/reports-filters.png",
+    "status": 200,
+    "size": 29700
+  },
+  {
+    "relPath": "/images/product/reports-hero-medium.png",
+    "localPath": "/images/product/reports-hero-medium.png",
+    "status": 200,
+    "size": 118956
+  },
+  {
+    "relPath": "/images/product/reports-hero-square.png",
+    "localPath": "/images/product/reports-hero-square.png",
+    "status": 200,
+    "size": 58368
+  },
+  {
+    "relPath": "/images/product/reports-hero.png",
+    "localPath": "/images/product/reports-hero.png",
+    "status": 200,
+    "size": 480131
+  },
+  {
+    "relPath": "/images/product/reports-slack.png",
+    "localPath": "/images/product/reports-slack.png",
+    "status": 200,
+    "size": 32180
+  },
+  {
+    "relPath": "/images/product/scale-favorites.png",
+    "localPath": "/images/product/scale-favorites.png",
+    "status": 200,
+    "size": 13888
+  },
+  {
+    "relPath": "/images/product/scale-homescreen.png",
+    "localPath": "/images/product/scale-homescreen.png",
+    "status": 200,
+    "size": 28246
+  },
+  {
+    "relPath": "/images/product/scale-speed.png",
+    "localPath": "/images/product/scale-speed.png",
+    "status": 200,
+    "size": 35407
+  },
+  {
+    "relPath": "/images/product/scale-teams.png",
+    "localPath": "/images/product/scale-teams.png",
+    "status": 200,
+    "size": 16198
+  },
+  {
+    "relPath": "/images/og/product.png",
+    "localPath": "/images/og/product.png",
+    "status": 200,
+    "size": 414718
+  },
+  {
+    "relPath": "/images/og/ai.jpg",
+    "localPath": "/images/og/ai.jpg",
+    "status": 200,
+    "size": 396307
+  },
+  {
+    "relPath": "/images/ai/hero-small.png",
+    "localPath": "/images/ai/hero-small.png",
+    "status": 200,
+    "size": 45160
+  },
+  {
+    "relPath": "/images/ai/hero-medium.png",
+    "localPath": "/images/ai/hero-medium.png",
+    "status": 200,
+    "size": 52138
+  },
+  {
+    "relPath": "/images/ai/hero-large.png",
+    "localPath": "/images/ai/hero-large.png",
+    "status": 200,
+    "size": 89304
+  },
+  {
+    "relPath": "/images/ai/bg-features.jpg",
+    "localPath": "/images/ai/bg-features.jpg",
+    "status": 200,
+    "size": 13306
+  },
+  {
+    "relPath": "/images/ai/carousel-1-large.png",
+    "localPath": "/images/ai/carousel-1-large.png",
+    "status": 200,
+    "size": 28078
+  },
+  {
+    "relPath": "/images/ai/carousel-2-large.png",
+    "localPath": "/images/ai/carousel-2-large.png",
+    "status": 200,
+    "size": 30947
+  },
+  {
+    "relPath": "/images/ai/carousel-3-large.png",
+    "localPath": "/images/ai/carousel-3-large.png",
+    "status": 200,
+    "size": 52491
+  },
+  {
+    "relPath": "/images/ai/carousel-1-small.png",
+    "localPath": "/images/ai/carousel-1-small.png",
+    "status": 200,
+    "size": 26180
+  },
+  {
+    "relPath": "/images/ai/carousel-2-small.png",
+    "localPath": "/images/ai/carousel-2-small.png",
+    "status": 200,
+    "size": 30977
+  },
+  {
+    "relPath": "/images/ai/carousel-3-small.png",
+    "localPath": "/images/ai/carousel-3-small.png",
+    "status": 200,
+    "size": 43111
+  },
+  {
+    "relPath": "/images/ai/analysis-company-wide.png",
+    "localPath": "/images/ai/analysis-company-wide.png",
+    "status": 200,
+    "size": 13086
+  },
+  {
+    "relPath": "/images/ai/analysis-actionable.png",
+    "localPath": "/images/ai/analysis-actionable.png",
+    "status": 200,
+    "size": 52589
+  },
+  {
+    "relPath": "/images/ai/analysis-seamless.png",
+    "localPath": "/images/ai/analysis-seamless.png",
+    "status": 200,
+    "size": 34217
+  },
+  {
+    "relPath": "/images/ai/ill-trust-large.png",
+    "localPath": "/images/ai/ill-trust-large.png",
+    "status": 200,
+    "size": 88293
+  },
+  {
+    "relPath": "/images/ai/trust-semantic-model.png",
+    "localPath": "/images/ai/trust-semantic-model.png",
+    "status": 200,
+    "size": 18959
+  },
+  {
+    "relPath": "/images/ai/trust-reasoning.png",
+    "localPath": "/images/ai/trust-reasoning.png",
+    "status": 200,
+    "size": 19260
+  },
+  {
+    "relPath": "/images/ai/trust-questions.png",
+    "localPath": "/images/ai/trust-questions.png",
+    "status": 200,
+    "size": 14722
+  },
+  {
+    "relPath": "/images/ai/phone-small.jpg",
+    "localPath": "/images/ai/phone-small.jpg",
+    "status": 200,
+    "size": 106482
+  },
+  {
+    "relPath": "/images/ai/phone-large.jpg",
+    "localPath": "/images/ai/phone-large.jpg",
+    "status": 200,
+    "size": 127801
+  },
+  {
+    "relPath": "/images/ai/overview-large.jpg",
+    "localPath": "/images/ai/overview-large.jpg",
+    "status": 200,
+    "size": 455049
+  },
+  {
+    "relPath": "/images/ai/overview-medium.jpg",
+    "localPath": "/images/ai/overview-medium.jpg",
+    "status": 200,
+    "size": 352100
+  },
+  {
+    "relPath": "/images/ai/slack-logo.svg",
+    "localPath": "/images/ai/slack-logo.svg",
+    "status": 200,
+    "size": 1120
+  },
+  {
+    "relPath": "/images/ai/slack-small.png",
+    "localPath": "/images/ai/slack-small.png",
+    "status": 200,
+    "size": 42997
+  },
+  {
+    "relPath": "/images/ai/slack-large.png",
+    "localPath": "/images/ai/slack-large.png",
+    "status": 200,
+    "size": 55653
+  },
+  {
+    "relPath": "/images/ai/ill-robot-large.png",
+    "localPath": "/images/ai/ill-robot-large.png",
+    "status": 200,
+    "size": 54271
+  }
+]
