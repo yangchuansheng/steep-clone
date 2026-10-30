@@ -1224,61 +1224,21 @@ const SEMANTIC_PLATFORM_FEATURES: readonly ThreeCardItemData[] = [
   },
 ];
 
-export const SEALOS_NETWORK_BUS_CAPABILITIES: readonly StaggerFeatureGridItem[] =
-  [
-    {
-      title: "<1ms Private Network",
-      icon: <ModulesAndJoins36Icon className="text-white" />,
-      description:
-        "Sub-millisecond internal routing across apps, databases, and caches inside your workspace.",
-    },
-    {
-      title: "Internal DNS Isolation",
-      icon: <MetricsAndDimensions36Icon className="text-white" />,
-      description:
-        "Databases and Redis run on private cluster hostnames like pg-cluster.ns.svc.",
-    },
-    {
-      title: "Auto-Injected Credentials",
-      icon: <Entities36Icon className="text-white" />,
-      description:
-        "Connection strings and ${{service.NAME}} variables are wired automatically on deploy.",
-    },
-    {
-      title: "Zero Internal Traffic Fees",
-      icon: <Targets36Icon className="text-white" />,
-      description:
-        "Unlimited internal bandwidth between your web services, workers, and storage buckets.",
-    },
-  ];
-
-export interface SemanticModelShowcaseCardProps {
-  title?: React.ReactNode;
-  description?: React.ReactNode;
-  image?: string;
-  capabilities?: readonly StaggerFeatureGridItem[];
-}
-
-export function SemanticModelShowcaseCard({
-  title = SEMANTIC_PLATFORM_COPY.semanticPlatformSection.hero.title,
-  description = SEMANTIC_PLATFORM_COPY.semanticPlatformSection.hero.description,
-  image = "/images/model/semantic-hero-ill.png",
-  capabilities = SEMANTIC_MODEL_CAPABILITIES,
-}: SemanticModelShowcaseCardProps = {}) {
+function SemanticModelShowcaseCard() {
   return (
     <div className="lg:mb-10 mb-8 bg-[#1A1A1A] md:rounded-3xl px-7 xs:px-8 md:px-20 pt-20 pb-4 border-white/5 md:border">
       <div className="sm:mx-7 md:mx-0 h-auto flex flex-col lg:flex-row sm:rounded-2xl justify-between">
         <div className="flex flex-col max-w-[270px] mb-8">
           <span className="text-white text-3xl font-medium lg:leading-tight leading-8 mb-3">
-            {title}
+            {SEMANTIC_PLATFORM_COPY.semanticPlatformSection.hero.title}
           </span>
           <span className="text-white/60 text-lg font-normal leading-tight">
-            {description}
+            {SEMANTIC_PLATFORM_COPY.semanticPlatformSection.hero.description}
           </span>
         </div>
         <div className="lg:w-2/3 w-full pl-6 md:pl-3 flex items-end justify-end overflow-hidden  pb-10 ">
           <Image
-            src={image}
+            src="/images/model/semantic-hero-ill.png"
             alt=""
             width={0}
             height={0}
@@ -1288,7 +1248,7 @@ export function SemanticModelShowcaseCard({
         </div>
       </div>
       <div className="mb-20 border-t border-white/5 pt-10">
-        <StaggerFeatureGrid items={capabilities} mode="dark" />
+        <StaggerFeatureGrid items={SEMANTIC_MODEL_CAPABILITIES} mode="dark" />
       </div>
     </div>
   );
@@ -1715,23 +1675,7 @@ const CACHING_LAYER_FEATURES = [
   },
 ] as const;
 
-export interface CachingLayerFeatureItem {
-  title: React.ReactNode;
-  description: React.ReactNode;
-  icon: React.ReactNode;
-}
-
-export interface CachingLayerSectionProps {
-  title?: React.ReactNode;
-  description?: React.ReactNode;
-  features?: readonly CachingLayerFeatureItem[];
-}
-
-export function CachingLayerSection({
-  title = SEMANTIC_PLATFORM_COPY.cachingLayerSection.title,
-  description = SEMANTIC_PLATFORM_COPY.cachingLayerSection.description,
-  features = CACHING_LAYER_FEATURES,
-}: CachingLayerSectionProps = {}) {
+function CachingLayerSection() {
   const { isSmall } = useWindowSize();
   const { triggerRef, isInView } = useInViewTrigger({
     start: isSmall ? "top bottom-=200" : "top bottom-=300",
@@ -1746,11 +1690,13 @@ export function CachingLayerSection({
               mode="dark"
               isInView={isInView}
               headingClassName="sm:text-[46px]! text-[40px]!"
-              heading={title}
-              description={description}
+              heading={SEMANTIC_PLATFORM_COPY.cachingLayerSection.title}
+              description={
+                SEMANTIC_PLATFORM_COPY.cachingLayerSection.description
+              }
               cta={
                 <>
-                  {features.map((item, idx) => (
+                  {CACHING_LAYER_FEATURES.map((item, idx) => (
                     <div
                       key={idx}
                       className="flex-row mt-7 hidden xl:flex gap-5"
@@ -1778,7 +1724,7 @@ export function CachingLayerSection({
         </div>
       </Section>
       <Section className="px-10! mt-12 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:hidden mb-30 md:mb-40 md:px-20! gap-8 md:gap-y-10">
-        {features.map((item, idx) => (
+        {CACHING_LAYER_FEATURES.map((item, idx) => (
           <div
             key={idx}
             className="flex-row md:flex-row sm:flex-col flex gap-4 md:gap-6"

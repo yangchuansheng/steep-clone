@@ -16,7 +16,6 @@ import {
 import {
   FeatureImageStack,
   HorizontalTabBar,
-  type HorizontalTabBarItem,
   type IconProps,
   NoiseOverlay,
   Section,
@@ -1491,78 +1490,6 @@ export const SEALOS_CAPABILITIES_TABS: readonly AiIntroTabItem[] = [
   },
 ];
 
-export const SEALOS_OPS_TABS: readonly AiIntroTabItem[] = [
-  {
-    id: "ops-oom",
-    label: "502 & OOM Diagnostics",
-    artboard: "ops-oom",
-    duration: 8,
-    description:
-      "Correlates OOMKilled exit code 137 logs and memory spikes into a one-click memory and connection upgrade card.",
-    image: "/images/ai/carousel-1-large.png",
-    smallImage: "/images/ai/carousel-1-small.png",
-  },
-  {
-    id: "ops-hot-update",
-    label: "Hot Update & Rollback",
-    artboard: "ops-hot-update",
-    duration: 8,
-    description:
-      "Builds incremental images, verifies 200 OK across static assets, and rolls back in one click.",
-    image: "/images/ai/carousel-2-large.png",
-    smallImage: "/images/ai/carousel-2-small.png",
-  },
-  {
-    id: "ops-db-tunnel",
-    label: "DB Scaling & Local Tunnel",
-    artboard: "ops-db-tunnel",
-    duration: 8,
-    description:
-      "Expands volume storage online and opens an encrypted 127.0.0.1:15432 tunnel for local database tools.",
-    image: "/images/ai/carousel-3-large.png",
-    smallImage: "/images/ai/carousel-3-small.png",
-  },
-  {
-    id: "ops-config-mount",
-    label: "Config Mount & Batch Env",
-    artboard: "ops-config-mount",
-    duration: 8,
-    description:
-      "Mounts container config files like /etc/nginx/nginx.conf and parses batch environment variables.",
-    image: "/images/ai/carousel-1-large.png",
-    smallImage: "/images/ai/carousel-1-small.png",
-  },
-  {
-    id: "ops-gateway-trace",
-    label: "AI Gateway Tracing",
-    artboard: "ops-gateway-trace",
-    duration: 8,
-    description:
-      "Tracks 16-char Request IDs, TTFT latency, and model spend while rotating OpenAI or Anthropic keys.",
-    image: "/images/ai/carousel-2-large.png",
-    smallImage: "/images/ai/carousel-2-small.png",
-  },
-  {
-    id: "ops-health-hints",
-    label: "7 Service Health Hints",
-    artboard: "ops-health-hints",
-    duration: 8,
-    description:
-      "Surfaces runtime hints for active deploys, unhealthy replicas, restarts, memory limits, and backups.",
-    image: "/images/ai/carousel-3-large.png",
-    smallImage: "/images/ai/carousel-3-small.png",
-  },
-];
-
-export const SEALOS_OPS_LOOP_STEPS: readonly HorizontalTabBarItem[] = [
-  { id: "step-1", label: "1. Collect Logs & Metrics" },
-  { id: "step-2", label: "2. Diagnose Root Cause" },
-  { id: "step-3", label: "3. Generate Deploy Plan" },
-  { id: "step-4", label: "4. Zero-Downtime Rollout" },
-  { id: "step-5", label: "5. Verify Static Assets" },
-  { id: "step-6", label: "6. Continuous Health Hints" },
-];
-
 function AiIntroMobileStack({
   items = INTRO_MOBILE_ITEMS,
 }: {
@@ -1602,7 +1529,6 @@ export interface AiIntroSectionProps {
   heading?: React.ReactNode;
   description?: React.ReactNode;
   tabs?: readonly AiIntroTabItem[];
-  stepBarItems?: readonly HorizontalTabBarItem[];
 }
 
 export function AiIntroSection({
@@ -1610,7 +1536,6 @@ export function AiIntroSection({
   heading = AI_COPY.introSection.title,
   description = AI_COPY.introSection.description,
   tabs = INTRO_TABS,
-  stepBarItems,
 }: AiIntroSectionProps = {}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animationKey, setAnimationKey] = useState(1);
@@ -1677,15 +1602,6 @@ export function AiIntroSection({
             </div>
           </Section>
         </div>
-        {stepBarItems && !isSmall && (
-          <HorizontalTabBar
-            itemWidth="full"
-            buttonsEnabled={false}
-            items={stepBarItems}
-            activeIndex={activeIndex}
-            onSelect={handleTabClick}
-          />
-        )}
         {isSmall ? (
           <AiIntroMobileStack items={mobileItems} />
         ) : (
@@ -1749,24 +1665,6 @@ export function AiIntroSection({
   );
 }
 
-export function OpsDayTwoSection() {
-  return (
-    <AiIntroSection
-      id="ops"
-      heading={
-        <>
-          Autonomous Day-2
-          <br />
-          operations
-        </>
-      }
-      description=""
-      tabs={SEALOS_OPS_TABS}
-      stepBarItems={SEALOS_OPS_LOOP_STEPS}
-    />
-  );
-}
-
 const THREE_CARDS_ITEMS: readonly ThreeCardItemData[] = [
   {
     title: AI_COPY.threeCardsSection.cardOne.title,
@@ -1827,41 +1725,7 @@ const CAPABILITIES_CARDS: readonly ThreeCardItemData[] = [
   },
 ];
 
-export const SEALOS_COST_TIER_CARDS: readonly ThreeCardItemData[] = [
-  {
-    title: "1 vCPU 2 GB · $5/mo",
-    image: "/images/ai/trust-semantic-model.png",
-    description:
-      "Starter tier for side projects and web decks, covered in week one by your $5 welcome credit.",
-    bordered: true,
-  },
-  {
-    title: "4 vCPU 16 GB · $36/mo",
-    image: "/images/ai/trust-reasoning.png",
-    description:
-      "Production tier vs $70–$100/mo on stitched clouds. Save 50%+ on compute and 1–3 Ops roles.",
-    bordered: true,
-  },
-  {
-    title: "8 vCPU 32 GB · $72/mo",
-    image: "/images/ai/trust-questions.png",
-    description:
-      "High-concurrency SaaS cluster with sub-millisecond private networking and zero internal traffic fees.",
-    bordered: true,
-  },
-];
-
-export interface AiCapabilitiesSectionProps {
-  title?: React.ReactNode;
-  description?: React.ReactNode;
-  cards?: readonly ThreeCardItemData[];
-}
-
-export function AiCapabilitiesSection({
-  title = AI_COPY.capabilitiesSection.title,
-  description = AI_COPY.capabilitiesSection.description,
-  cards = CAPABILITIES_CARDS,
-}: AiCapabilitiesSectionProps = {}) {
+function AiCapabilitiesSection() {
   const { isSmall } = useWindowSize();
   const { triggerRef } = useInViewTrigger({
     start: isSmall ? "top bottom-=200" : "top bottom-=300",
@@ -1879,10 +1743,10 @@ export function AiCapabilitiesSection({
             className="flex-col flex pr-4 md:pr-8 lg:mr-20 pb-20 md:pb-0 md:w-[360px]"
           >
             <p className="text-6xl font-medium leading-none mb-3 text-insets font-serif">
-              {title}
+              {AI_COPY.capabilitiesSection.title}
             </p>
             <p className="text-primary-text/60 text-lg md:text-xl text-md font-normal leading-tight text-insets">
-              {description}
+              {AI_COPY.capabilitiesSection.description}
             </p>
           </div>
           <div className="md:max-w-[360px] xl:max-w-[462px]">
@@ -1900,7 +1764,7 @@ export function AiCapabilitiesSection({
         noPaddingOnSmallScreens={true}
         className="gap-8 md:gap-20 flex flex-col mb-16 md:mb-40"
       >
-        <ThreeCardRow items={cards} />
+        <ThreeCardRow items={CAPABILITIES_CARDS} />
       </Section>
     </>
   );

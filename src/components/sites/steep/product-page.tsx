@@ -268,12 +268,12 @@ const PRODUCT_COPY = {
   hero: {
     title: "Built for",
     titleRotatingWords: [
-      "full-stack code",
-      "Vibe Coding apps",
-      "GitHub repos",
-      "managed DBs",
-      "AI templates",
-      "web decks",
+      "commercial",
+      "operations",
+      "product",
+      "marketing",
+      "finance",
+      "everyone",
     ],
     description: (
       <>
@@ -963,28 +963,14 @@ function getMarbleResponsiveSettings(width: number): MarbleShaderSettings {
   };
 }
 
-export interface RotatingHeroWordsProps {
-  words?: readonly string[];
-  className?: string;
-}
-
-export function RotatingHeroWords({
-  words = PRODUCT_COPY.hero.titleRotatingWords,
-  className,
-}: RotatingHeroWordsProps = {}) {
+function RotatingHeroWords() {
   const containerRef = useRef<HTMLSpanElement>(null);
   const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const splitsRef = useRef<SplitText[]>([]);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
-  const longestWord = words.reduce(
-    (longest, current) =>
-      current.length >= longest.length ? current : longest,
-    "abcdefghijkl",
-  );
 
   useEffect(() => {
     const container = containerRef.current;
-    wordRefs.current = wordRefs.current.slice(0, words.length);
     const elements = wordRefs.current.filter(
       (el): el is HTMLSpanElement => el !== null,
     );
@@ -1046,15 +1032,12 @@ export function RotatingHeroWords({
       splitsRef.current = [];
       timelineRef.current = null;
     };
-  }, [words]);
+  }, []);
 
   return (
     <span
       ref={containerRef}
-      className={clsx(
-        "inline-block overflow-hidden align-bottom pb-[0.1em] translate-y-[0.1em] relative -ml-2.5 xs:ml-0",
-        className,
-      )}
+      className="inline-block overflow-hidden align-bottom pb-[0.1em] translate-y-[0.1em] relative -ml-2.5 xs:ml-0"
       style={{
         fontKerning: "none",
         WebkitFontSmoothing: "antialiased",
@@ -1062,18 +1045,18 @@ export function RotatingHeroWords({
       }}
     >
       <span
-        className="invisible italic pl-[0.15em] pr-[0.1em] whitespace-nowrap"
+        className="invisible italic pl-[0.15em] pr-[0.1em]"
         aria-hidden={true}
       >
-        {longestWord}
+        abcdefghijkl
       </span>
-      {words.map((word, idx) => (
+      {PRODUCT_COPY.hero.titleRotatingWords.map((word, idx) => (
         <span
           key={word}
           ref={(el) => {
             if (el) wordRefs.current[idx] = el;
           }}
-          className="absolute inset-y-0 left-[0.25em] inline-block italic text-left whitespace-nowrap"
+          className="absolute inset-y-0 left-[0.25em]  inline-block italic text-left"
         >
           {word}
         </span>
@@ -1321,23 +1304,21 @@ function ScaleInViewBanner({
   );
 }
 
-export interface MobileAppBannerProps {
+interface MobileAppBannerProps {
   image: string;
   smallImage: string;
   cta: string;
   title: string;
   description: string;
-  href?: string;
   bgColor?: string;
 }
 
-export function MobileAppBanner({
+function MobileAppBanner({
   image,
   smallImage,
   cta,
   title,
   description,
-  href = "/download",
   bgColor = "bg-[#EFEFEF]/60",
 }: MobileAppBannerProps) {
   return (
@@ -1368,7 +1349,7 @@ export function MobileAppBanner({
             {description}
           </p>
           <div className=" mt-4">
-            <Link href={href}>
+            <Link href="/download">
               <SteepButton
                 label={cta}
                 variant="secondary"
@@ -1784,7 +1765,7 @@ function FourCardRow({
   );
 }
 
-export const SEALOS_CLOUD_PRIMITIVES: readonly ThreeCardItemData[] = [
+const SEALOS_CLOUD_PRIMITIVES: readonly ThreeCardItemData[] = [
   {
     title: "High-Availability Databases",
     description:
@@ -1813,14 +1794,14 @@ export const SEALOS_CLOUD_PRIMITIVES: readonly ThreeCardItemData[] = [
   },
 ];
 
-export interface ScaleWithSteepSectionProps {
+interface ScaleWithSteepSectionProps {
   id?: string;
   heading?: React.ReactNode;
   description?: React.ReactNode;
   items?: readonly ThreeCardItemData[];
 }
 
-export function ScaleWithSteepSection({
+function ScaleWithSteepSection({
   id,
   heading = PRODUCT_COPY.scaleWithSteepSection.title,
   description = PRODUCT_COPY.scaleWithSteepSection.description,
