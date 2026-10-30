@@ -1765,31 +1765,33 @@ function FourCardRow({
   );
 }
 
-const SEALOS_CLOUD_PRIMITIVES: readonly ThreeCardItemData[] = [
+export const CLOUD_PRIMITIVES_FEATURES: readonly ThreeCardItemData[] = [
   {
     title: "High-Availability Databases",
     description:
       "Standalone and replicated PostgreSQL, MySQL, MongoDB, and Redis with internal DNS and 14-day backups.",
-    image: "/images/product/scale-homescreen.png",
+    image: "/images/sealos/primitive-1-db.png",
+    bordered: true,
   },
   {
     title: "Object Storage Buckets",
     description:
       "S3-compatible private and public buckets with folder uploads and 1-hour temporary share links.",
-    image: "/images/product/scale-teams.png",
+    image: "/images/sealos/primitive-2-bucket.png",
     bordered: true,
   },
   {
     title: "Unified AI Gateway",
     description:
       "Route Chat, Embedding, Rerank, Audio, and PDF models with automatic OpenAI and Anthropic env mapping.",
-    image: "/images/product/scale-favorites.png",
+    image: "/images/sealos/primitive-3-gateway.png",
+    bordered: true,
   },
   {
     title: "Desktop Preview & Workspaces",
     description:
       "Click live web or PPTX elements in the built-in browser to edit via chat across team workspaces.",
-    image: "/images/product/scale-speed.png",
+    image: "/images/sealos/primitive-4-desktop.png",
     bordered: true,
   },
 ];
@@ -1840,7 +1842,7 @@ export function CloudPrimitivesSection() {
     <ScaleWithSteepSection
       heading="Built-in cloud primitives"
       description=""
-      items={SEALOS_CLOUD_PRIMITIVES}
+      items={CLOUD_PRIMITIVES_FEATURES}
     />
   );
 }

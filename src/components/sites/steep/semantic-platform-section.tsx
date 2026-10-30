@@ -2,7 +2,6 @@
 
 import { useState, type CSSProperties, type Ref } from "react";
 import {
-  AnimatedImage,
   CarouselFeatureCard,
   ClockRefresh36Icon,
   CubeLogo36Icon,
@@ -27,9 +26,9 @@ export const SEMANTIC_PLATFORM_SECTIONS = [
     artboard: "Explore-line",
     duration: 12,
     description: STEEP_COPY.semanticPlatform.featureSemanticModel.description,
-    image: "/images/home/model-start.jpg",
-    mediumImage: "/images/home/model-start.jpg",
-    smallImage: "/images/model/semantic-hero-ill.png",
+    image: "/images/sealos/workflow-4-canvas.png",
+    mediumImage: "/images/sealos/workflow-4-canvas.png",
+    smallImage: "/images/sealos/workflow-4-canvas-sq.png",
     bordered: false,
   },
   {
@@ -38,8 +37,8 @@ export const SEMANTIC_PLATFORM_SECTIONS = [
     artboard: "Maps",
     duration: 6.14,
     description: STEEP_COPY.semanticPlatform.featureSteepApi.description,
-    image: "/images/home/model-api.jpg",
-    smallImage: "/images/home/model-api-square.jpg",
+    image: "/images/sealos/workflow-3-template.png",
+    smallImage: "/images/sealos/workflow-3-template-sq.png",
     bordered: false,
   },
   {
@@ -48,8 +47,8 @@ export const SEMANTIC_PLATFORM_SECTIONS = [
     artboard: "Drill-down",
     duration: 13.16,
     description: STEEP_COPY.semanticPlatform.featureMetricsCatalog.description,
-    image: "/images/home/model-metric-catalog.png",
-    smallImage: "/images/home/model-catalog-square.png",
+    image: "/images/sealos/hero-deployed-canvas.png",
+    smallImage: "/images/sealos/compare-2-network.png",
     bordered: true,
   },
   {
@@ -58,11 +57,400 @@ export const SEMANTIC_PLATFORM_SECTIONS = [
     artboard: "Targets",
     duration: 8,
     description: STEEP_COPY.semanticPlatform.featureDefineInCode.description,
-    image: "/images/home/model-code.png",
-    smallImage: "/images/model/semantic-code.png",
+    image: "/images/sealos/ops-3-database.png",
+    smallImage: "/images/sealos/tier-3-cluster.png",
     bordered: true,
   },
 ];
+
+interface CanvasNodeData {
+  id: string;
+  kind: "Service" | "PostgreSQL" | "Redis" | "AI Gateway";
+  subtitle: string;
+  badge: string;
+  internalHost: string;
+  backupPolicy: string;
+  envRef: string;
+}
+
+interface CanvasStackData {
+  projectName: string;
+  nodes: readonly [
+    CanvasNodeData,
+    CanvasNodeData,
+    CanvasNodeData,
+    CanvasNodeData,
+  ];
+}
+
+const ARCHITECTURE_STACKS: readonly CanvasStackData[] = [
+  {
+    projectName: "new-api-gateway",
+    nodes: [
+      {
+        id: "new-api",
+        kind: "Service",
+        subtitle: "api-hub.sealos.run ↗",
+        badge: "1 vCPU / 2 GiB",
+        internalHost: "new-api.ns-acme.svc:3000",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{new-api-pg.DATABASE_URL}}",
+      },
+      {
+        id: "new-api-pg",
+        kind: "PostgreSQL",
+        subtitle: "PostgreSQL 16 · Replicated · Backup 12:00",
+        badge: "Replicated · 20 GiB",
+        internalHost: "new-api-pg.ns-acme.svc:5432",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{new-api-pg.DATABASE_URL}}",
+      },
+      {
+        id: "new-api-redis",
+        kind: "Redis",
+        subtitle: "Redis 7.2 · 0.5 vCPU / 512 MiB",
+        badge: "In-Memory Cache",
+        internalHost: "new-api-redis.ns-acme.svc:6379",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{new-api-redis.REDIS_URL}}",
+      },
+      {
+        id: "ai-gateway",
+        kind: "AI Gateway",
+        subtitle: "Connected · OpenAI Protocol · OPENAI_API_KEY",
+        badge: "Unified Router",
+        internalHost: "ai-gateway.ns-acme.svc:4000",
+        backupPolicy: "Key Rotation Active",
+        envRef: "${{ai-gateway.OPENAI_API_KEY}}",
+      },
+    ],
+  },
+  {
+    projectName: "dify-n8n-stack",
+    nodes: [
+      {
+        id: "dify-web",
+        kind: "Service",
+        subtitle: "dify-studio.sealos.run ↗ · Auto-fill",
+        badge: "1 vCPU / 2 GiB",
+        internalHost: "dify-web.ns-acme.svc:3000",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{dify-pg.DATABASE_URL}}",
+      },
+      {
+        id: "dify-worker",
+        kind: "Service",
+        subtitle: "1 vCPU / 2 GiB",
+        badge: "Celery Worker",
+        internalHost: "dify-worker.ns-acme.svc:5001",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{dify-redis.REDIS_URL}}",
+      },
+      {
+        id: "dify-pg",
+        kind: "PostgreSQL",
+        subtitle: "PostgreSQL 16 · Replicated · Backup 12:00",
+        badge: "Replicated · 20 GiB",
+        internalHost: "dify-pg.ns-acme.svc:5432",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{dify-pg.DATABASE_URL}}",
+      },
+      {
+        id: "dify-redis",
+        kind: "Redis",
+        subtitle: "Redis 7.2 · Queue & Cache",
+        badge: "0.5 vCPU / 1 GiB",
+        internalHost: "dify-redis.ns-acme.svc:6379",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{dify-redis.REDIS_URL}}",
+      },
+    ],
+  },
+  {
+    projectName: "quote-deck-leads",
+    nodes: [
+      {
+        id: "quote-deck-web",
+        kind: "Service",
+        subtitle: "quote-deck.sealos.run ↗",
+        badge: "HTTPS Ready",
+        internalHost: "quote-deck-web.ns-acme.svc:3000",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{leads-pg.DATABASE_URL}}",
+      },
+      {
+        id: "lead-worker",
+        kind: "Service",
+        subtitle: "0.5 vCPU / 512 MiB",
+        badge: "Webhook Consumer",
+        internalHost: "lead-worker.ns-acme.svc:8080",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{leads-pg.DATABASE_URL}}",
+      },
+      {
+        id: "leads-pg",
+        kind: "PostgreSQL",
+        subtitle: "PostgreSQL 16 · 0.5 vCPU / 1 GiB",
+        badge: "Persistent Volume",
+        internalHost: "leads-pg.ns-acme.svc:5432",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{leads-pg.DATABASE_URL}}",
+      },
+      {
+        id: "leads-redis",
+        kind: "Redis",
+        subtitle: "Redis 7.2 · Session Cache",
+        badge: "0.5 vCPU / 512 MiB",
+        internalHost: "leads-redis.ns-acme.svc:6379",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{leads-redis.REDIS_URL}}",
+      },
+    ],
+  },
+  {
+    projectName: "multi-client-saas",
+    nodes: [
+      {
+        id: "acme-web",
+        kind: "Service",
+        subtitle: "acme-saas.sealos.run ↗",
+        badge: "Next.js 16 · TLS",
+        internalHost: "acme-web.ns-acme.svc:3000",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{saas-pg.DATABASE_URL}}",
+      },
+      {
+        id: "acme-api",
+        kind: "Service",
+        subtitle: "2 Replicas · Deploying update",
+        badge: "Zero-Downtime Rollout",
+        internalHost: "acme-api.ns-acme.svc:4000",
+        backupPolicy: "Daily 12:00 Backup",
+        envRef: "${{saas-pg.DATABASE_URL}}",
+      },
+      {
+        id: "saas-pg",
+        kind: "PostgreSQL",
+        subtitle: "PostgreSQL 16 · Replicated · 14d Backup",
+        badge: "Primary + Standby",
+        internalHost: "saas-pg.ns-acme.svc:5432",
+        backupPolicy: "Daily 12:00 Backup (14d)",
+        envRef: "${{saas-pg.DATABASE_URL}}",
+      },
+      {
+        id: "ai-gateway",
+        kind: "AI Gateway",
+        subtitle: "Connected · Anthropic Protocol",
+        badge: "ANTHROPIC_API_KEY",
+        internalHost: "ai-gateway.ns-acme.svc:4000",
+        backupPolicy: "Key Rotation Active",
+        envRef: "${{ai-gateway.ANTHROPIC_API_KEY}}",
+      },
+    ],
+  },
+];
+
+function SealosArchitectureCanvas({ activeIndex }: { activeIndex: number }) {
+  const [selectedNodeByStack, setSelectedNodeByStack] = useState<
+    Record<number, number>
+  >({});
+  const stack = ARCHITECTURE_STACKS[activeIndex] ?? ARCHITECTURE_STACKS[0];
+  const selectedNodeIdx = selectedNodeByStack[activeIndex] ?? 0;
+  const inspectedNode = stack.nodes[selectedNodeIdx] ?? stack.nodes[0];
+
+  return (
+    <div className="w-full aspect-960/640 rounded-2xl lg:rounded-3xl bg-[#F9F9FB] text-[#18181B] border border-white/10 shadow-2xl overflow-hidden flex flex-col select-none">
+      <div className="h-12 px-4 bg-white border-b border-black/6 flex items-center justify-between text-xs shrink-0">
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 font-medium text-[#18181B]">
+            <span className="inline-flex size-5 items-center justify-center rounded-md bg-[#18181B] text-white text-[11px] font-semibold">
+              S
+            </span>
+            <span>Sealos</span>
+            <span className="text-black/30">/</span>
+            <span className="font-mono text-[11px] text-black/70">
+              {stack.projectName}
+            </span>
+          </div>
+          <div className="hidden sm:flex items-center gap-1 bg-[#F4F4F6] p-1 rounded-lg">
+            <span className="px-2.5 py-1 rounded-md bg-white text-[#18181B] font-medium shadow-2xs">
+              Architecture
+            </span>
+            <span className="px-2.5 py-1 text-black/50">Monitor</span>
+            <span className="px-2.5 py-1 text-black/50">Logs</span>
+            <span className="px-2.5 py-1 text-black/50">Settings</span>
+          </div>
+        </div>
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 text-[11px] font-medium text-emerald-700">
+          <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span>● Running · 4/4 online</span>
+        </div>
+      </div>
+
+      <div className="flex-1 flex min-h-0">
+        <div
+          className="flex-1 relative p-5 lg:p-6 flex flex-col justify-between overflow-hidden"
+          style={{
+            backgroundImage:
+              "radial-gradient(rgba(24, 24, 27, 0.12) 1px, transparent 1px)",
+            backgroundSize: "18px 18px",
+          }}
+        >
+          <svg
+            className="pointer-events-none absolute inset-0 w-full h-full"
+            viewBox="0 0 600 480"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M 175 135 C 275 135, 315 135, 415 135"
+              fill="none"
+              stroke="#10B981"
+              strokeWidth="1.75"
+              strokeDasharray="5 5"
+              className="animate-pulse"
+            />
+            <path
+              d="M 175 145 C 285 180, 305 295, 415 320"
+              fill="none"
+              stroke="#6366F1"
+              strokeWidth="1.5"
+              strokeDasharray="4 4"
+            />
+            <path
+              d="M 175 320 C 275 320, 315 160, 415 145"
+              fill="none"
+              stroke="#10B981"
+              strokeWidth="1.5"
+              strokeDasharray="4 4"
+            />
+            <path
+              d="M 175 325 C 275 325, 315 325, 415 325"
+              fill="none"
+              stroke="#0EA5E9"
+              strokeWidth="1.75"
+              strokeDasharray="5 5"
+              className="animate-pulse"
+            />
+          </svg>
+
+          <div className="relative z-10 grid grid-cols-2 gap-4 lg:gap-5 my-auto">
+            {stack.nodes.map((node, idx) => {
+              const isSelected = idx === selectedNodeIdx;
+              return (
+                <button
+                  key={node.id}
+                  type="button"
+                  onClick={() =>
+                    setSelectedNodeByStack((prev) => ({
+                      ...prev,
+                      [activeIndex]: idx,
+                    }))
+                  }
+                  className={`canvas-node text-left rounded-2xl bg-white p-3.5 lg:p-4 transition-all cursor-pointer border ${
+                    isSelected
+                      ? "border-[#18181B] ring-2 ring-black/8 shadow-lg"
+                      : "border-black/8 hover:border-black/25 shadow-sm"
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-black/55">
+                      <span className="size-2 rounded-full bg-emerald-500" />
+                      {node.kind}
+                    </span>
+                    <span className="rounded-md bg-[#F4F4F6] px-1.5 py-0.5 text-[10px] font-medium text-black/65">
+                      {node.badge}
+                    </span>
+                  </div>
+                  <div className="font-mono text-xs lg:text-sm font-semibold text-[#18181B] truncate">
+                    {node.id}
+                  </div>
+                  <div className="mt-1 text-[11px] text-black/60 truncate">
+                    {node.subtitle}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="relative z-10 flex items-center justify-between pt-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white border border-black/10 px-3 py-1.5 text-xs font-medium text-[#18181B] shadow-xs">
+              <span>+ Add service</span>
+            </span>
+            <span className="text-[11px] text-black/45 font-mono">
+              Private K8s DNS · Auto-injected env
+            </span>
+          </div>
+        </div>
+
+        <div className="w-[250px] xl:w-[300px] bg-white border-l border-black/6 p-4 lg:p-5 flex flex-col justify-between shrink-0">
+          <div>
+            <div className="flex items-center justify-between gap-2 pb-3 border-b border-black/6">
+              <div>
+                <div className="text-[11px] text-black/45 font-medium">
+                  Inspector · {inspectedNode.kind}
+                </div>
+                <div className="font-mono text-sm font-semibold text-[#18181B]">
+                  {inspectedNode.id}
+                </div>
+              </div>
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-700">
+                ● Running
+              </span>
+            </div>
+
+            <div className="mt-3 flex flex-wrap gap-1 text-[11px] text-black/55 border-b border-black/6 pb-2.5">
+              <span className="font-semibold text-[#18181B]">Overview</span>
+              <span>·</span>
+              <span>Logs</span>
+              <span>·</span>
+              <span>Metrics</span>
+              <span>·</span>
+              <span>Variables</span>
+              <span>·</span>
+              <span>Settings</span>
+            </div>
+
+            <div className="mt-3.5 space-y-2.5 text-xs">
+              <div className="rounded-xl bg-[#F9F9FB] p-2.5 border border-black/5">
+                <div className="text-[10px] uppercase tracking-wider text-black/45">
+                  Internal DNS Host
+                </div>
+                <div className="mt-0.5 font-mono text-[11px] text-[#18181B] truncate">
+                  {inspectedNode.internalHost}
+                </div>
+              </div>
+
+              <div className="rounded-xl bg-[#F9F9FB] p-2.5 border border-black/5">
+                <div className="text-[10px] uppercase tracking-wider text-black/45">
+                  Backup & Recovery
+                </div>
+                <div className="mt-0.5 text-[11px] font-medium text-[#18181B]">
+                  {inspectedNode.backupPolicy}
+                </div>
+              </div>
+
+              <div className="rounded-xl bg-[#F9F9FB] p-2.5 border border-black/5">
+                <div className="text-[10px] uppercase tracking-wider text-black/45">
+                  Injected Variable Reference
+                </div>
+                <div className="mt-0.5 font-mono text-[11px] text-emerald-700 truncate">
+                  {inspectedNode.envRef}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-3 border-t border-black/6 flex items-center justify-between text-[11px] text-black/55">
+            <span>*.ns-acme.svc:5432</span>
+            <span className="font-mono text-[#18181B] font-medium">
+              TLS 1.3 Ready
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const SEMANTIC_PLATFORM_FEATURES = [
   {
@@ -226,18 +614,7 @@ export function SemanticPlatformSection() {
               <div
                 className={`flex justify-center mx-auto w-full 2xl:w-[960px] max-w-[1280px] 2xl:shrink-0 ${isXLarge ? "mt-0" : "mt-16"}`}
               >
-                <AnimatedImage
-                  src={activeSection.mediumImage ?? activeSection.image}
-                  alt={activeSection.label}
-                  className="w-full"
-                  imageClassName={
-                    "w-full object-fit aspect-960/640 rounded-2xl lg:rounded-3xl" +
-                    (activeSection.bordered ? " border border-white/5" : "")
-                  }
-                  duration={0.6}
-                  ease="expo.out"
-                  initialScale={0.8}
-                />
+                <SealosArchitectureCanvas activeIndex={activeIndex} />
               </div>
             </div>
           )}

@@ -1,5 +1,4 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
 
 import React, { forwardRef, useEffect, useMemo, useState } from "react";
 import clsx from "clsx";
@@ -27,41 +26,41 @@ const CUSTOMER_STORIES: CustomerStoryItem[] = [
   {
     quote: STEEP_COPY.customerStorySection.customerVoi.quote,
     label: STEEP_COPY.customerStorySection.customerVoi.subhead,
-    image: "/images/home/customers-voi.jpg",
+    image: "/images/sealos/compare-1-control.png",
     url: "/customers/voi-ditching-dashboards-for-scalable-analytics",
     logo: "/images/customers/logos/voi.svg",
     logoWidth: 70,
-    alt: "voi",
+    alt: "Control Surface",
     active: true,
   },
   {
     quote: STEEP_COPY.customerStorySection.customerJuni.quote,
     label: STEEP_COPY.customerStorySection.customerJuni.subhead,
-    image: "/images/home/customers-juni.jpg",
+    image: "/images/sealos/compare-2-network.png",
     url: "/customers/juni-from-data-blind-to-insight-led-confidence",
     logo: "/images/customers/logos/juni.svg",
     logoWidth: 80,
-    alt: "Juni",
+    alt: "Private Network",
     active: false,
   },
   {
     quote: STEEP_COPY.customerStorySection.customerBounce.quote,
     label: STEEP_COPY.customerStorySection.customerBounce.subhead,
-    image: "/images/home/customers-bounce.jpg",
+    image: "/images/sealos/compare-3-safety.png",
     url: "/customers/data-made-accessible-with-intuitive-BI",
     logo: "/images/customers/logos/bounce.svg",
     logoWidth: 105,
-    alt: "Bounce",
+    alt: "Change Safety",
     active: false,
   },
   {
     quote: STEEP_COPY.customerStorySection.customerOnceupon.quote,
     label: STEEP_COPY.customerStorySection.customerOnceupon.subhead,
-    image: "/images/home/customers-onceupon.jpg",
+    image: "/images/sealos/compare-4-ops.png",
     url: "/customers/fueling-strategic-data-use-across-the-business",
     logo: "/images/customers/logos/onceupon.svg",
     logoWidth: 115,
-    alt: "Onceupon",
+    alt: "Day-2 Operations",
     active: false,
   },
 ];
@@ -98,11 +97,9 @@ const BrandTabBar = ({
               : "opacity-40 hover:opacity-100",
           )}
         >
-          <img
-            src={brand.logo}
-            alt={brand.alt}
-            style={{ width: brand.logoWidth }}
-          />
+          <span className="text-sm font-medium text-primary-text">
+            {brand.alt}
+          </span>
         </button>
       ))}
     </div>
@@ -119,7 +116,6 @@ const MobilePortraitCard = forwardRef<
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundColor: "#D3E3FC",
-    backgroundBlendMode: "multiply",
   };
   return (
     <div
@@ -199,12 +195,9 @@ export const CustomerStorySection = () => {
                       isFading ? "opacity-0" : "opacity-100",
                     )}
                   >
-                    <img
-                      src={CUSTOMER_STORIES[displayedIndex].logo}
-                      alt="Customer story"
-                      width={CUSTOMER_STORIES[displayedIndex].logoWidth}
-                      className="mb-3 md:hidden text-insets"
-                    />
+                    <span className="block mb-3 md:hidden text-insets text-sm font-medium text-primary-text">
+                      {CUSTOMER_STORIES[displayedIndex].alt}
+                    </span>
                     <SplitHeadingBlock
                       isInView={isInView}
                       className="text-left"
@@ -225,7 +218,7 @@ export const CustomerStorySection = () => {
             <AnimatedImage
               src={CUSTOMER_STORIES[activeIndex].image}
               alt="Customer story"
-              className="hidden md:block w-[45%] h-auto max-w-[480px] max-h-[480px] aspect-square rounded-3xl mix-blend-multiply "
+              className="hidden md:block w-[45%] h-auto max-w-[480px] max-h-[480px] aspect-square rounded-3xl shadow-xl"
               imageClassName="w-full h-full object-cover rounded-3xl"
               duration={0.6}
               initialScale={0.8}
