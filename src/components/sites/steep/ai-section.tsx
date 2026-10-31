@@ -173,20 +173,17 @@ const AI_FEATURES = [
   {
     title: STEEP_COPY.aiSection.featureOne.title,
     description: STEEP_COPY.aiSection.featureOne.description,
-    image: "/images/sealos/tier-1-starter.png",
-    bordered: true,
+    image: "/images/ai/trust.png",
   },
   {
     title: STEEP_COPY.aiSection.featureTwo.title,
     description: STEEP_COPY.aiSection.featureTwo.description,
-    image: "/images/sealos/tier-2-production.png",
-    bordered: true,
+    image: "/images/ai/generate-reports.png",
   },
   {
     title: STEEP_COPY.aiSection.featureThree.title,
     description: STEEP_COPY.aiSection.featureThree.description,
-    image: "/images/sealos/tier-3-cluster.png",
-    bordered: true,
+    image: "/images/ai/workflows.png",
   },
 ];
 
@@ -231,7 +228,7 @@ export function AiSection() {
         <div className="pb-0 md:pb-10 lg:pb-16 xl:pb-24">
           <div className="relative sm:hidden pl-6 overflow-clip pb-12">
             <img
-              src="/images/sealos/ops-agent-approval.png"
+              src="/images/ai/hero-medium-long.png"
               alt=""
               className="block rounded-l-xl shadow-xl h-[120vw] object-top-left object-cover"
             />
@@ -239,7 +236,7 @@ export function AiSection() {
           <div className="relative sm:px-12 md:px-12 hidden sm:block lg:hidden pb-12 overflow-visible">
             <TabletPersonaOverlay />
             <img
-              src="/images/sealos/ops-agent-approval.png"
+              src="/images/ai/hero-medium-long.png"
               alt=""
               className="relative z-0 w-auto rounded-2xl shadow-2xl"
             />
@@ -247,7 +244,7 @@ export function AiSection() {
           <div className="relative px-20 max-w-[1360px] mx-auto hidden lg:block pb-16 overflow-visible">
             <DesktopPersonaOverlay />
             <img
-              src="/images/sealos/ops-agent-approval.png"
+              src="/images/ai/hero-medium-long.png"
               alt=""
               className="relative z-0 w-full rounded-[20px] xl:rounded-3xl shadow-2xl max-w-[788px] mx-auto"
             />

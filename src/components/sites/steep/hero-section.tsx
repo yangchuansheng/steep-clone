@@ -10,7 +10,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   ArrowRight16Icon,
   ArrowUp12Icon,
+  AtSign16Icon,
   BellDot18Icon,
+  Clock16Icon,
   IconButton,
   NoiseOverlay,
   SplitHeadingBlock,
@@ -22,18 +24,23 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 const BRAND_LOGOS = [
-  { src: "/images/sealos/logos/nextjs.svg", alt: "Next.js" },
-  { src: "/images/sealos/logos/postgresql.svg", alt: "PostgreSQL" },
-  { src: "/images/sealos/logos/redis.svg", alt: "Redis" },
-  { src: "/images/sealos/logos/docker.svg", alt: "Docker" },
-  { src: "/images/sealos/logos/dify.svg", alt: "Dify" },
-  { src: "/images/sealos/logos/n8n.svg", alt: "n8n" },
-  { src: "/images/sealos/logos/openwebui.svg", alt: "Open WebUI" },
-  { src: "/images/sealos/logos/mongodb.svg", alt: "MongoDB" },
-  { src: "/images/sealos/logos/mysql.svg", alt: "MySQL" },
-  { src: "/images/sealos/logos/wordpress.svg", alt: "WordPress" },
-  { src: "/images/sealos/logos/openai.svg", alt: "OpenAI" },
-  { src: "/images/sealos/logos/anthropic.svg", alt: "Anthropic" },
+  { src: "/images/customers/logos/voi.svg", alt: "voi" },
+  { src: "/images/customers/logos/framer.svg", alt: "Framer" },
+  { src: "/images/customers/logos/veo.svg", alt: "Veo" },
+  { src: "/images/customers/logos/geoguessr.svg", alt: "GeoGuessr" },
+  { src: "/images/customers/logos/monta.svg", alt: "Monta" },
+  { src: "/images/customers/logos/bounce.svg", alt: "Bounce" },
+  { src: "/images/customers/logos/wunderflats.svg", alt: "Wunderflats" },
+  { src: "/images/customers/logos/hairburst.svg", alt: "Hairburst" },
+  { src: "/images/customers/logos/alloy.svg", alt: "Alloy" },
+  { src: "/images/customers/logos/lumiq.svg", alt: "LumiQ" },
+  { src: "/images/customers/logos/juni.svg", alt: "Juni" },
+  { src: "/images/customers/logos/instabox.svg", alt: "Instabox" },
+  { src: "/images/customers/logos/cabonline.svg", alt: "Cabonline" },
+  { src: "/images/customers/logos/onceupon.svg", alt: "Onceupon" },
+  { src: "/images/customers/logos/budbee.svg", alt: "Budbee" },
+  { src: "/images/customers/logos/goals.svg", alt: "Goals" },
+  { src: "/images/customers/logos/philadelphia.svg", alt: "Philadelphia Inquirer" },
 ];
 
 function BrandLogoStrip() {
@@ -111,23 +118,14 @@ const AiPromptBox = () => (
         Deploy this Next.js repo with replicated PostgreSQL, Redis, and HTTPS
       </span>
     </div>
-    <div className="ai-button-icons flex justify-between items-center gap-2">
-      <div className="flex items-center gap-2 text-[11px] text-primary-text whitespace-nowrap overflow-hidden">
-        <span className="inline-flex size-6 items-center justify-center rounded-full border border-black/8 bg-[#F4F4F6] text-xs font-medium">
-          +
-        </span>
-        <span className="inline-flex items-center rounded-full border border-black/8 bg-[#F4F4F6] px-2.5 py-1 font-medium text-primary-text/80">
-          local-demo · main
-        </span>
+    <div className="ai-button-icons flex justify-between items-center">
+      <div className="flex items-center gap-2 text-primary-text">
+        <AtSign16Icon />
+        <Clock16Icon />
       </div>
-      <div className="flex items-center gap-2 shrink-0">
-        <span className="inline-flex items-center rounded-full border border-amber-500/25 bg-amber-500/10 px-2.5 py-1 text-[11px] font-medium text-amber-800">
-          Confirm before changes
-        </span>
-        <IconButton className="bg-black! text-white size-8! shrink-0">
-          <ArrowUp12Icon className="text-white" />
-        </IconButton>
-      </div>
+      <IconButton className="bg-black! text-white size-8!">
+        <ArrowUp12Icon className="text-white" />
+      </IconButton>
     </div>
   </div>
 );
@@ -186,8 +184,8 @@ const $ = (e: number) => {
 const X = { x: W.x + 480, y: W.y + 60 };
 const K = { y: 0 };
 const Q = { y: -130 };
-const Y = { opacity: 0, top: 56, left: 240, y: 140 };
-const ee = { opacity: 1, y: 76 };
+const Y = { opacity: 0, top: 28, left: 300, y: 200 };
+const ee = { opacity: 1, y: 84 };
 
 function renderHeroTitle(): React.ReactNode {
   const title: React.ReactNode | (() => React.ReactNode) = STEEP_COPY.hero.title;
@@ -423,27 +421,27 @@ export const HeroDesktop = ({ carousel }: { carousel: React.ReactNode }) => {
           className="w-[1200px] transform-gpu relative overflow-hidden rounded-3xl shadow-xl"
         >
           <Image
-            src="/images/sealos/hero-window-clean.png"
+            src="/images/home-site-25/hero-desktop-clean.png"
             alt=""
             width={1200}
             height={880}
             priority
             unoptimized
           />
-          <div ref={w} className="absolute top-[56px] left-[240px] transform-gpu">
+          <div ref={w} className="absolute top-22 left-62 transform-gpu">
             <img
-              src="/images/sealos/hero-content-start.png"
+              src="/images/home-site-25/home-content-start.png"
               alt=""
-              width={960}
-              height={824}
+              width={906}
+              height={790}
             />
           </div>
           <div ref={b} className="absolute transform-gpu">
             <img
-              src="/images/sealos/hero-content-deployed.png"
+              src="/images/home-site-25/home-content.png"
               alt=""
-              width={960}
-              height={748}
+              width={800}
+              height={790}
             />
           </div>
         </div>
@@ -453,7 +451,7 @@ export const HeroDesktop = ({ carousel }: { carousel: React.ReactNode }) => {
           style={shadowStyle}
         >
           <img
-            src="/images/sealos/hero-block-plan.svg"
+            src="/images/home/hero-pink-block.svg"
             alt=""
             width={294}
             height={235}
@@ -466,7 +464,7 @@ export const HeroDesktop = ({ carousel }: { carousel: React.ReactNode }) => {
           style={shadowStyle}
         >
           <img
-            src="/images/sealos/hero-block-canvas.svg"
+            src="/images/home/hero-blue-block.svg"
             alt=""
             width={600}
             height={235}
@@ -479,7 +477,7 @@ export const HeroDesktop = ({ carousel }: { carousel: React.ReactNode }) => {
           style={shadowStyle}
         >
           <img
-            src="/images/sealos/hero-block-db.svg"
+            src="/images/home/hero-gray-block.svg"
             alt=""
             width={294}
             height={200}
@@ -563,7 +561,7 @@ export const HeroMobile = () => (
           height={1760}
           sizes="160vw"
           priority
-          src="/images/sealos/hero-new-task.png"
+          src="/images/home-site-25/hero-medium.png"
           alt=""
           className="w-[160%] max-w-none h-auto ml-[10%] drop-shadow-xl"
         />
@@ -572,14 +570,14 @@ export const HeroMobile = () => (
           height={1704}
           sizes="46vw"
           priority
-          src="/images/sealos/compare-3-safety.png"
+          src="/images/home-site-25/hero-mobile.png"
           alt="Hero Section mobile"
           className="absolute top-[23%] left-[6%] w-[46%] h-auto drop-shadow-2xl"
         />
       </div>
       <div className="relative w-[96%] overflow-hidden hidden sm:block p-20">
         <Image
-          src="/images/sealos/hero-new-task.png"
+          src="/images/home-site-25/hero-medium.png"
           alt="Hero Section small"
           width={2400}
           height={1760}
@@ -588,7 +586,7 @@ export const HeroMobile = () => (
           className="w-full h-auto drop-shadow-xl"
         />
         <Image
-          src="/images/sealos/compare-3-safety.png"
+          src="/images/home-site-25/hero-mobile.png"
           alt="Hero Section mobile"
           width={786}
           height={1704}

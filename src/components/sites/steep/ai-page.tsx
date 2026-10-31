@@ -1455,8 +1455,8 @@ export const SEALOS_CAPABILITIES_TABS: readonly AiIntroTabItem[] = [
     duration: 8,
     description:
       "Ship local folders, Vibe Coding projects, and interactive HTML decks with instant HTTPS links.",
-    image: "/images/sealos/workflow-1-local.png",
-    smallImage: "/images/sealos/workflow-1-local-sq.png",
+    image: "/images/ai/carousel-1-large.png",
+    smallImage: "/images/ai/carousel-1-small.png",
   },
   {
     id: "workflow-github-db",
@@ -1465,8 +1465,8 @@ export const SEALOS_CAPABILITIES_TABS: readonly AiIntroTabItem[] = [
     duration: 8,
     description:
       "Connect repositories, detect branches and ports, and wire PostgreSQL automatically.",
-    image: "/images/sealos/workflow-2-github.png",
-    smallImage: "/images/sealos/workflow-2-github-sq.png",
+    image: "/images/ai/carousel-2-large.png",
+    smallImage: "/images/ai/carousel-2-small.png",
   },
   {
     id: "workflow-templates",
@@ -1475,8 +1475,8 @@ export const SEALOS_CAPABILITIES_TABS: readonly AiIntroTabItem[] = [
     duration: 8,
     description:
       "Launch n8n, Dify, New API, and WordPress with one-click credential and secret generation.",
-    image: "/images/sealos/workflow-3-template.png",
-    smallImage: "/images/sealos/workflow-3-template-sq.png",
+    image: "/images/ai/carousel-3-large.png",
+    smallImage: "/images/ai/carousel-3-small.png",
   },
   {
     id: "workflow-canvas-gateway",
@@ -1485,8 +1485,8 @@ export const SEALOS_CAPABILITIES_TABS: readonly AiIntroTabItem[] = [
     duration: 8,
     description:
       "Expand any project canvas with replicated databases, Docker images, and OpenAI or Anthropic routing.",
-    image: "/images/sealos/workflow-4-canvas.png",
-    smallImage: "/images/sealos/workflow-4-canvas-sq.png",
+    image: "/images/home/model-define-ui.png",
+    smallImage: "/images/model/semantic-ui.png",
   },
 ];
 
